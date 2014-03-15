@@ -1,0 +1,168 @@
+/*.css_tree{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    display :table-cell;
+    float: left;    
+}
+.css_tree ul,.css_tree li,.css_tree p,.css_tree h1,.css_tree h2,.css_tree h3,.css_tree h4,.css_tree h5{
+    margin: 0;
+    padding: 0;
+}
+.css_tree img { 
+    border: none;
+}
+.css_tree p{
+    font-size: 1em;
+    margin: 0 0 1em 0;
+}
+
+.css_tree input,.css_tree select,.css_tree textarea,.css_tree th,.css_tree td {
+    font-size: 1em; 
+}
+	
+.css_tree ol.tree{
+    padding: 0 0 0 30px;
+    width: 300px;
+}
+.css_tree li{ 
+    position: relative; 
+    margin-left: -15px;
+    list-style: none;
+}
+.css_tree .selected{
+    background-color: rgba(28, 183, 236, 0.1) !important;
+    border: 1px #1c98cc solid;
+}
+.css_tree li.file{
+    margin-left: -1px !important;
+}
+.css_tree li.file a{
+    background: url(document.png) 0 0 no-repeat;
+    color: #000;
+    padding-left: 21px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.css_tree li.file a[href *= '.pdf']{
+    background: url(document.png) 0 0 no-repeat;
+}
+.css_tree li.file a[href *= '.html']{
+    background: url(document.png) 0 0 no-repeat; 
+}
+.css_tree li.file a[href $= '.css']{
+    background: url(document.png) 0 0 no-repeat;
+}
+.css_tree li.file a[href $= '.js']{
+    background: url(document.png) 0 0 no-repeat; 
+}
+
+.css_tree li input{
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    top: 0;
+}
+.css_tree li input + ol{
+    background: url(toggle-small-expand.png) 44.8px -3px no-repeat;
+    margin: -0.938em 0 0 -44px;
+    height: 1em;
+}
+
+.css_tree li input + ol > li {
+    display: none; margin-left: -14px !important; padding-left: 1px;
+}
+
+.css_tree li label{
+    background: url(folder-horizontal.png) 15px 1px no-repeat;
+    cursor: pointer;
+    display: block;
+    padding-left: 37px;
+    margin: 0;
+}
+
+.css_tree li input:checked + ol{
+        background: url(toggle-small.png) 44.8px 1px no-repeat;
+        margin: -1.25em 0 0 -44px; 
+        padding: 1.563em 0 0 80px;
+        height: auto;
+}
+
+.css_tree li input:checked + ol > li {
+    display: block; margin: 0 0 0.125em;
+}
+.css_tree li input:checked + ol > li:last-child {
+    margin: 0 0 0.063em;
+}*/
+
+.css_tree {
+    min-height:20px;
+    padding:19px;
+    margin-bottom:20px;
+    background-color:#fbfbfb;
+    border:1px solid #999;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
+}
+.css_tree li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative;
+}
+.css_tree li::before, .css_tree li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto;
+}
+.css_tree li::before {
+    border-left:1px solid #999;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px;
+}
+.css_tree li::after {
+    border-top:1px solid #999;
+    height:20px;
+    top:25px;
+    width:25px;
+}
+.css_tree li span {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.css_tree li.parent_li>span {
+    cursor:pointer
+}
+.css_tree>ol>li::before, .tree>ol>li::after {
+    border:0
+}
+.css_tree li:last-child::before {
+    height:26px
+}
+.css_tree li.parent_li>span:hover, .css_tree li.parent_li>span:hover+ol li span {
+    background:#eee;
+    border:1px solid #94a0b4;
+    color:#000
+}

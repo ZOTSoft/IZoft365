@@ -1,0 +1,7 @@
+.tabs-header,.window,.easyui-tabs,#lool, a,.panel-header,panel-title,#window-gethtml_itogovy,.window-shadow,#otchetfrm3,.panel {display: none}
+#print_o{display: block !important; visibility: visible; }
+
+
+table{margin: 0; padding: 0; border: 1px solid #000;border-collapse:collapse; width: 200px; }
+table td{border: 1px dotted #CCCCCC; margin: 0; padding: 3px; border: 1px solid #000;}
+.tableheader{background: #F3F3F3;}

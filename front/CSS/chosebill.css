@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.chosebill{
+	display:none;
+	height:100%;
+	width:100%;
+	position:absolute;	
+    background: white;
+}
+.topbtnsCB{
+	width:99%;
+	height:95px;
+	position:relative;	
+}
+.ordersgridCB{
+	width:80%;
+	height:99%;
+	position:relative;	
+}
+.billtable{
+	position:relative;
+	width:100%;
+	height:100%;	
+}
+.exitbtnCB{
+	position:absolute;
+	right: 5px;
+	top:43px;
+	width:140px;
+	height:45px;	
+	font-size:18px!important;
+}
+.viewbtnCB{
+	position:absolute;
+	left:168px;
+	top:45px;
+	width:160px;
+	height:46px;	
+	font-size:18px!important;       
+}
+.newbillbtn{
+	position:absolute;
+	left:5px;
+	top:45px;
+	width:160px;
+	height:45px;	
+	font-size:18px!important;
+}

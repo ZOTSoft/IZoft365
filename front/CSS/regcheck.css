@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    overflow: hidden;
+    margin: 0;
+}
+#regcheckForm{
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    width: 99%;
+    height: 99%;
+    top:0px;
+    left:0px;
+}
+#regcheckForm label{
+    color:#0072C6;
+    font-weight: bold;
+    font-family:'Arial';
+    font-size:28px;
+    margin: 1em 2em 0 2em;
+    position: relative;
+    top: 15px;    
+}
+#exitbtnRegCheck{
+    position:absolute;
+    width:147px;
+    bottom:1em;
+    right:4em;
+    font-size: 20px;
+}
+#cookInterface{
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    width: 99%;
+    height: 99%;
+    top:0px;
+    left:0px;
+}
+#cookInterface label{
+    color:#0072C6;
+    font-weight: bold;
+    font-family:'Arial';
+    font-size:28px;
+    margin: 1em 2em 0 2em;
+    /*position: relative;*/
+    top: 15px;    
+}
+#exitbtnCookInterface{
+    position:absolute;
+    width:147px;
+    bottom:1em;
+    right:4em;
+    font-size: 20px;
+}
+#exitbtnFitnessInterface{
+    position:absolute;
+    width:147px;
+    bottom:1em;
+    right:4em;
+    font-size: 20px;
+}
+#createRecordFitnessInterface{
+    position:absolute;
+    width:147px;
+    top: 1em;
+    right: 4em;
+    font-size: 20px;
+}
+#reportbtnRegCheck{
+    position:absolute;
+    width:147px;
+    bottom:1em;
+    left:4em;
+    font-size: 20px;
+}
+#alertdiv{
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;   
+    position: absolute;
+    width:250px;
+    height:100px;
+    top: 15.7em;
+    right:5em;
+    background-color: #607B8B; 
+    opacity: 0.9;
+}
+.headdiv{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+.bodydiv{
+    position: relative;
+    display: block;
+    width: 98%;
+    height: 66%;
+    overflow: auto;
+    left: 10px;
+    top: 15px;
+    border-right:solid 1px; 
+    border-bottom:solid 1px;
+    border-color: gray;
+}
+@media screen and (min-width:1400px){ 
+    .bodydiv{
+    position: relative;
+    display: block;
+    width: 98%;
+    height: 75%;
+    overflow: auto;
+    left: 10px;
+    top: 15px;
+}
+}
+#shinput{
+    position: relative;
+    top: 20px;    
+    font-size: 1.3em;
+    font-family: "Arial";
+    font-weight: bold;
+    margin: 0.5em 0 0 3em;
+}
+.glass{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgb(108,108,108);
+}
+/*input[type=text],input[type=password], textarea {
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus,input[type=password]:focus, textarea:focus {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;    
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
+}*/
+
+/*Background Color*/
+.bg{
+    display: table;
+    opacity: 0.9;
+    font-weight: bold;
+    border: none;
+    padding: .5em 2em .55em;
+    transition: 0.2s all ease; 
+    -moz-transition: 0.2s all ease; 
+    -webkit-transition: 0.2s all ease; 
+    -o-transition: 0.2s all ease; 
+    -ms-transition: 0.2s all ease;
+}
+.bg.lightblue{
+    background: #0072C6;
+    color: #FFFFFF;
+}
+.bg.blue{
+    background: #0000FF;
+    color: #FFFFFF;    
+}
+.bg.forestGreen{
+    background: #228B22;
+    color: #FFFFFF;    
+}
+.bg.steelBlue{
+    background: #4682B4;
+    color: #FFFFFF;    
+}
+.bg.orange{
+    background: #D24726;
+    color: #FFFFFF;    
+}
+.bg.red{
+    background: #AC193D;
+    color: #FFFFFF;    
+}
+.bg.skyBlue{
+    background: #094AB2;
+    color: #ffffff;
+}
+.bg.hover:hover{
+    opacity:1;
+    border-left:0.3em solid #000;
+}
+.bg.active:active{
+    color: white !important; 
+    background-color: #191919 !important; 
+}
+/*table styles - end*/
+
+/*Types*/
+.no-select{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}

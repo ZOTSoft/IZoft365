@@ -1,0 +1,128 @@
+.container_my-table{
+    display: block;
+    height: 98%;
+    overflow: auto;
+    padding-right: 1em;
+    margin-left: 1em;    
+}
+.my-table{
+    border-spacing: 0;
+    border-collapse: separate;
+    width: 98%;
+    height: 100%;
+    margin:1em 0 0 1em; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;  
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+.my-table tbody tr {
+    border: 1px #fff solid;
+}
+.my-table tbody tr .folder {
+    background-color: #f9f9f9;
+}
+.my-table tbody tr td {
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    font-size: 11pt;
+    letter-spacing: 0.02em;
+    line-height: 14pt;
+    font-smooth: always;
+    padding: 3px 10px;
+    border-right: 1px #ddd solid;
+    border-bottom: 1px #ddd solid;
+    border-left: 1px transparent solid;
+    border-top: 1px transparent solid;
+    box-sizing: border-box;
+}
+.my-table thead tr th, table thead tr td {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-bottom: 1px #ddd solid;
+    border-right: 1px #ddd solid;
+    border-left: 1px transparent solid;
+    border-top: 1px transparent solid;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 11pt;
+    letter-spacing: 0.01em;
+    line-height: 13pt;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: left;
+        border-spacing: 0;
+    border-collapse: separate;
+}
+.my-table thead tr th.right, table thead tr td.right {
+    text-align: right;
+    padding-right: 10px;
+}
+.my-table tbody tr td.right {
+    text-align: right;
+}
+.my-table td:hover{
+    border-collapse: separate !important;
+}
+.my-table tbody tr.selected-row {
+    background-color: rgba(28, 183, 236, 0.1) !important;
+}
+.my-table tbody tr.selected-row td:first-child {
+    border-left: 1px #1c98cc solid;
+}
+.my-table tbody tr.selected-row td {
+    border-top: 1px #1c98cc solid;
+    border-bottom: 1px #1c98cc solid;
+}
+.my-table tbody tr.selected-row td:last-child {
+    border-right: 1px #1c98cc solid;
+}
+.my-table.hovered thead tr th:hover,
+.my-table.hovered thead tr td:hover {
+  border: 1px #1c98cc solid;
+  background: rgba(28, 183, 236, 0.1);
+}
+.my-table.hovered tbody tr:hover {
+  background-color: rgba(28, 183, 236, 0.1);
+}
+.my-table.hovered tbody tr:hover td:first-child {
+  border-left: 1px #1c98cc solid;
+}
+.my-table.hovered tbody tr:hover td:last-child {
+  border-right: 1px #1c98cc solid;
+}
+.my-table.hovered tbody tr:hover td {
+  border-top: 1px #1c98cc solid;
+  border-bottom: 1px #1c98cc solid;
+}
+.my-table tbody .category{
+    background-color: #f9f9f9;    
+}
+/*.my-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}*/
+.my-table .folder{
+    background: url(folder-horizontal.png) no-repeat;
+    display: block;
+    width: 19px;
+    height: 15px;
+}
+.my-table .folder-up{
+    background: url(folder-horizontal.png) no-repeat;
+    display: block;
+    width: 19px;
+    height: 15px;
+}
+.my-table .folder-up:after{
+    content: '\2190';
+    margin-left: 1.5em;
+    line-height: 13px;
+}
+#curredit{
+    position: absolute;
+    background: #9f00a7;
+}

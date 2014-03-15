@@ -1,0 +1,659 @@
+@charset "utf-8";
+/* CSS Document */
+/*Калькулятор для ввода кол-ва - Начало*/
+/*Форма оплаты временное дублированние - Начало*/
+.chosepaybtnend{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;
+    height:130px;
+    width:365px;
+    text-decoration:none;
+    color:#fff;
+    font-size:56px;      
+}
+.chosepaybtnend:hover{
+	background-color:#4ee955;
+}
+.chosepaybtn{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;
+    height:55px;
+    width:163px;
+    text-decoration:none;
+    color:#fff;
+    font-size:22px;
+}
+.chosepaybtn:hover{
+    background-color:#52A8E8;
+}
+.chosepaybtnpos1{
+    left:6px;
+    top:210px;
+}
+.chosepaybtnpos2{
+    left:6px;
+    top:275px;
+}
+.chosepaybtnpos3{
+    left:210px;
+    top:210px;
+    text-decoration:none !important;
+    color:#fff!important;
+    font-size:13px!important;
+}
+.chosepaybtnpos4{
+    left:210px;
+    top:275px;
+}
+.chosepaybtnpos5{
+    left:6px;
+    top:340px;
+}
+.chosepaylabel{
+    left:10px;
+    position:absolute;
+    font:bold Arial, Helvetica, sans-serif;
+    font-size:34px;
+    text-shadow:0 -1px 2px #fff;
+    color:#000;	    
+}
+.chosepaylabelpos1{
+    top:4px;
+}
+.chosepaylabelpos2{
+    top:100px;
+}
+.chosepaysumdivstyle{
+    position: absolute;
+    left: 10px;
+    width:368px;
+    height:45px;
+    text-decoration:none;
+    color:#000;
+    font-size:40px;
+}
+.sumdivpos1{
+    top:45px;
+}
+.balansedivpos1{
+    top:145px;    
+}
+.chosepaybtns{
+    position:absolute;
+    width: 400px;
+    height: 480px;
+    top:10px;
+    right:5px;
+}
+/*Форма оплаты временное дублированние - Конец*/
+.incalcdivstyle{
+	position:absolute;
+	vertical-align:central;
+	height:500px;
+	width:400px;
+	left:-400px;
+	top:25%;
+}
+.incalcstyle{
+    position: absolute;
+    margin-top:10px;
+    left: 15px;
+    height:80%;
+}
+.incalcstyle button:active
+{
+        position: relative;
+        top: 1px;
+}
+.inputincalc{
+    width:368px;
+    height:60px;
+    text-decoration:none;
+    color:#000;
+    font-size:48px;
+    text-align:center;
+}
+.incalcnumstyle{
+	width:85px;
+	height:85px;
+        font-size: 30px!important;
+}
+.inbtnstyle{
+	text-align:center;
+	color:#fafafa;
+	font-size:30px;
+	font-weight:bold;	
+}
+.inbtnV{
+	width:80px;
+	height:179px;
+}
+.inbtnH{
+	width:180px;
+	height:80px;
+}
+.Hsave1:after{
+	content:"\2714";
+	font-size:48px;
+}
+.Hsave2:after{
+	content:"\2408\000d\2190";
+	font-size:48px;
+}
+/*Калькулятор для ввода кол-ва - Конец*/
+/*Затемненный фон - Начало*/
+.glass {
+    opacity: 0.65;
+    position:absolute;
+	top:2px;
+	left:2px;
+	display:none;
+	height:100%;
+	width:100%;
+    border: 1px solid rgba(0,0,0,0.5);	
+}
+/*Затемненный фон - Конец*/
+/*Выбор из списка - Начало*/
+.okbtn{
+	height:99%;
+	float:left;
+	width:50%;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+	text-shadow:0 -1px 1px rgba(0,0,0,.3);
+}
+.okbtn:hover{
+	background-color:#72f878;
+}
+.cancelbtn{
+	height:99%;
+	width:50%;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+}
+.cancelbtn:hover{
+	background-color:#f87275;
+}
+.selectbtns{
+	position:relative;
+	height:65px;
+}
+.selectdiv{
+	position:absolute;
+	vertical-align:central;
+	opacity:0;
+	margin-top:auto;
+	height:500px;
+	width:400px;
+	left:35%;
+	top:10%;
+}
+.selecttable{
+	position:relative;
+	margin-top:10px;
+	margin-left:8px;
+	width:96%;
+	height:96%;
+}
+.selectgrid{
+	top:5px;
+	left:5px;
+	width:97%;
+	position:absolute;
+	overflow:auto;
+}
+.selectgrid tr td{
+	box-shadow:0 1px 5px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.3);
+	padding-bottom:5px;
+}
+.selectgrid tr:nth-child(odd) {
+}
+.selectgrid tr:nth-child(even) {
+}
+.selectgrid th {
+	padding: 6px 6px;
+	border: 1px solid #52a8d8;
+	color: #fff;
+}
+.selectgrid th:nth-child(1){
+	-webkit-border-top-left-radius:18px;
+	-moz-border-top-left-radius:18px;
+}
+.selectgrid th:nth-child(2){
+	-webkit-border-top-right-radius:18px;
+	-moz-border-top-right-radius:18px;
+}
+/*Выбор из списка - Конец*/
+.headerlable{
+	position:absolute;
+	font:bold Arial, Helvetica, sans-serif;
+	font-size:21px;
+	text-shadow:0 -1px 2px #000000;
+	color:#fff;	
+	top:10px;
+}
+.hpos1{
+	left:8px;
+}
+.hpos2{
+	left:370px;
+}
+.hpos3{
+	left:618px;
+}
+.chstyle{
+	position:absolute;
+	height:25px;
+	width:160px;
+	text-decoration:none;
+	color:#000;
+	font-size:20px;
+	text-align:center;
+	top:0px;
+}
+.chpos1{
+	left:186px;
+}
+.chpos2{
+	left:80px;
+}
+.chpos3{
+	top:10px;
+	left:649px;
+}
+.infoifront{
+	position:absolute;
+	width:160px;
+	height:25px;
+	right:1px;
+	top:17px;
+	font-size:18px;
+}
+.labelstyles{	
+	position:absolute;
+	font:bold Arial, Helvetica, sans-serif;
+	font-size:18px;
+	text-shadow:0 -1px 2px #eeeeee;
+	color:#000; 
+}
+.gradientstyle{
+	background-image:-webkit-linear-gradient(#e6e9e2 , #aaaaaa);
+	background-image:-moz-linear-gradient(#e6e9e2 , #aaaaaa);
+	background-color:#aaaaaa;
+	border:1px solid #aaaaaa;
+	box-shadow:0 1px 2px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.oficaintframe{
+	height:100%;
+	width:100%;
+	position:absolute;
+	overflow:hidden;
+}
+.oficiantmain{
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.orderbtns{
+	position:relative;
+	width:485px;
+	height:40px;
+	background-color:#b1cad7;
+	-webkit-border-bottom-left-radius:10px;
+	-moz-border-bottom-left-radius:10px;
+}
+.commentbtn{
+	height:90%;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+}
+.commentbtn:hover{
+	background-color:#52A8E8;
+}
+.deletebtn{
+	height:90%;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+}
+.deletebtn:hover{
+	background-color:#f87275;
+}
+.addbtn{
+	height:90%;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+}
+.addbtn:hover{
+	background-color:#72f878;
+}
+#menudiv{
+	height:99%;
+	overflow:auto;
+}
+.infocell{
+	height:170px;
+	width:485px;
+	float:left;
+	position:relative;
+}
+.headercell{
+	height:35px;
+	width:99%;
+}
+.menucell{
+	position: relative;
+	margin-left: 3px;
+	vertical-align: top;
+	width:99%;
+	overflow: hidden;
+}
+.menucell button{
+	position:relative;
+}
+.orderidcell{
+	display:none;
+	height:25px;
+}
+.ordercell{
+	position:relative;
+	height:99%;
+	width:485px;
+	overflow:auto;
+}
+.orderrow{
+	position:relative;
+}
+.ordertable{
+	top:5px;
+	left:5px;
+	width:99%;
+	position:absolute;
+	overflow:auto;
+}
+.ordertable tr td{
+	padding-bottom:5px;
+}
+.ordertable tr:nth-child(odd) {
+}
+.ordertable tr:nth-child(even) {
+}
+.ordertable th {
+	padding: 6px 6px;
+}
+.ordertable th:nth-child(1){
+	-webkit-border-top-left-radius:18px;
+	-moz-border-top-left-radius:18px;
+}
+.ordertable th:nth-child(5){
+	-webkit-border-top-right-radius:18px;
+	-moz-border-top-right-radius:18px;
+}
+.menubtns{
+	position:relative;
+	margin-left:7px;
+	margin-top:7px;
+	height:60px;
+	width:120px;
+	text-decoration:none;
+	color:#000;
+	font-size:13px;
+}
+.menubtns:hover{
+	background-color:#909090;
+}
+.menubns:active{
+	background-color:#2D7CD1;
+	box-shadow:0 1px 1px rgba(255,255,255,.5), inset 0 2px 5px rgba(0,0,100,.5);
+}
+.menubtnst{
+	position:relative;
+	margin-left:7px;
+	margin-top:7px;
+	word-wrap:break-word;
+	height:60px;
+	width:120px;
+}
+.menubtnst:hover{
+	background-color:#909090;
+}
+.menubtnsall{
+	position:relative;
+	margin-left:7px;
+	margin-top:7px;
+	height:60px;
+	width:120px;
+	text-decoration:none;
+	color:#fff;
+	font-size:13px;
+}
+.menubtnsall:hover{
+	background-color:#52A8E8;
+}
+.btnpricecell{
+	position:absolute;
+	left:52px;
+	top:-3px;
+	width:64px;
+	color:#fff;
+	font-size:14px;
+	height:18px;
+}
+/*InfoCell - Кнопки и дивы*/
+.backbtn{
+	position:absolute;
+	left:375px;
+	top:122px;
+	margin-left:7px;
+	margin-top:7px;
+	height:35px;
+	width:95px;
+	text-decoration:none;
+	color:#fff;
+	font-size:13px;
+}
+.backbtn:hover{
+	background-color:#52A8E8;
+}
+.exitbtn{
+	position:absolute;
+	left:240px;
+	top:120px;
+	margin-left:7px;
+	margin-top:7px;
+	height:40px;
+	width:80px;
+	text-decoration:none;
+	color:#fff;
+	font-size:13px;
+	background-color:#c2121e;
+}
+.exitbtn:hover{
+	background-color:#64b1e8;
+}
+.printbtn{
+	position:absolute;
+	left:155px;
+	top:120px;
+	margin-left:7px;
+	margin-top:7px;
+	height:40px;
+	width:80px;
+	text-decoration:none;
+	color:#fff;
+	font-size:14px;
+	background-color:#2ec935;
+}
+.printbtn:hover{
+	background-color:#4ee955;
+}
+.printdiv{
+	position:absolute;
+	height:33px;
+	width:170px;
+	left:5px;
+	top:130px;
+	text-decoration:none;
+	color:#000;
+	font-size:30px;
+}
+/*Верхний ряд кнопок(Клиент  Стол Скидка Сервис)*/
+/*Обшие стили для кнопок и дивов на центральной панели*/
+.btnstyleOF{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;   
+    height:28px;
+    width:50px;
+    text-decoration:none;
+    color:#fff;
+    font-size:9px;
+}
+.btnstyleOF:hover{
+    background-color:#64b1e8;
+}
+.btnstyleOF:after
+{
+    font-size:2.7em;
+    text-align:top;
+     content:"\270E";
+}
+.divstyleOF{
+    position:absolute;
+    height:22px;    
+    text-decoration:none;
+    color:#000;
+    font-size:19px;
+}
+/*Конец обших стилей*/
+.shtrihbtnOF{
+    top:69px;
+    left:160px;
+}
+.shtrihOF{
+    width:170px;
+    top:77px;
+    left:5px;
+}
+.clientbtn{
+    top:16px;
+    left:160px;
+}
+.clientdiv{
+	width:170px;
+	top:25px;
+	left:5px;
+}
+.tablebtn{
+	top:16px;
+	left:300px;
+}
+.tablediv{
+	width:110px;
+	top:25px;
+	left:225px;
+}
+.servicebtn{
+	top:69px;
+	left:425px;
+}
+.servicediv{
+	width:80px;
+	top:78px;
+	left:365px;
+}
+.salebtn{
+	top:16px;
+	left:425px;
+}
+.salediv{
+	width:80px;
+	top:25px;
+	left:365px;
+}
+.countbtn{
+	top:69px;
+	left:300px;
+}
+.countdiv{
+	width:95px;
+	top:78px;
+	left:225px;
+}
+/*Надписи Клиент Стол Сервис Скидка*/
+.lpos1{
+	left:10px;
+	top:5px;
+}
+.lpos2{
+	left:235px;
+	top:5px;
+}
+.lpos3{
+	left:370px;
+	top:5px;
+}
+.lpos4{
+	left:370px;
+	top:55px;
+}
+.lpos5{
+	left:235px;
+	top:55px;
+}
+.lpos6{
+	left:10px;
+	top:55px;
+}
+.lpos7{
+    left:11px;
+    top:104px;
+    font: 22px bold;
+}
+/*Часики*/
+
+.time {
+        width: 200px;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+ 	position:absolute;
+	top:10px;
+	right:10px;
+}
+#Date {
+        font-family:Tahoma, Geneva, sans-serif;
+        font-size:12px;
+        text-align:center;
+        text-shadow:0 0 5px #000;
+        font-weight: bold;
+}
+ul {
+        width:158px;
+        margin:0 auto;
+        padding:0px;
+        list-style:none;
+        text-align:center;
+}
+ul li {
+        display:inline;
+        font-size:22px;
+        text-align:center;
+        font-family:Tahoma, Geneva, sans-serif;
+		color:#FFF;
+        text-shadow:0 0 5px #000;
+        font-weight: bold;
+}
+ 
+#point {
+        position:relative;
+        padding-left:10px;
+        padding-right:10px;
+}

@@ -1,0 +1,327 @@
+/*
+*Color
+*/
+.div{
+    text-decoration:none;
+    color:#000;
+}
+.div.lightgrey{
+    border:1px solid #4b4b4b;
+    background: #C0C0C0;    
+}
+.div.red{
+    border:1px solid #4b4b4b;
+    background: #f94939;    
+}
+.div.darkwhite{
+    border:1px solid #4b4b4b;
+    background: #f1f1f1;    
+}
+.div.grey{
+    background: #4b4b4b;
+    border:1px solid #7d7e7d;        
+}
+.div.blue{
+    background: #1080dd;
+    border:1px solid #7d7e7d;        
+}
+.div.black{
+    background: #000000;
+    border:1px solid #7d7e7d;        
+}
+.div.lightblue{
+    background: #1ba1e2;
+    border:1px solid #7d7e7d;        
+}
+.div.cloud{
+    background: #f2f9fe;
+    border:1px solid #7d7e7d;      
+}
+.div.pink{
+    background: #d80073;
+    border:1px solid #7d7e7d;       
+}
+.input{
+    text-decoration:none;
+    color:#000;
+    text-align:center;
+    text-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+.input.white{
+    background: #ffffff;
+    border: 1px solid #a9a5a5;    
+}
+.button{
+    text-align:center;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:bold;	
+ 
+}
+.button.edit:after{
+    font-size:2.7em!important;
+    text-align:top!important;
+    content:"\270E";
+}
+.button.grey{
+    background: #858585;
+    border:1px solid #7d7e7d;    
+}
+.buttonClicked.grey{
+     background: #c0c0c0;    
+}
+.button.grey:hover{
+    background: #c0c0c0;    
+}
+.button.lightgrey{
+    background: #C0C0C0;
+    border:1px solid #7d7e7d;    
+}
+.button.lightgrey:hover{
+    background: #f0f0f0;    
+}
+.button.blue{
+    background: #1080dd;
+    border:1px solid #1080dd;    
+}
+.button.blue:hover{
+    color:#fff;
+    background: #1ba1e2;
+}
+.button.darkblue{
+    color:#fff;
+    background: #0b4b7f;
+    border:1px solid #0b4b7f;
+}
+.button.darkblue:hover{
+    color:#fff;
+    background: #5cb0f6;       
+}
+.button.green{
+    background: #42c842;
+    border:1px solid #42c842;    
+}
+.button.green:hover{
+    color:#fff;
+    background: #46de46;    
+}
+.button.red{
+    background: #e51400;
+    border:1px solid #e51400;    
+}
+.button.red:hover{
+    color:#fff;
+    background: #f94939;    
+}
+.button.lightgreen{
+    background: #a2c139;
+    border:1px solid #a2c139;    
+}
+.button.lightgreen:hover{
+    color:#fff;
+    background: #cff749;    
+}
+.button.darkgreen{
+    background: #339933;
+    border:1px solid #339933;    
+}
+.button.darkgreen:hover{
+    color:#fff;
+    background: #51ec51;    
+}
+.button.white{
+    background: #ffffff;
+    border:1px solid #7d7e7d;    
+}
+.button.white:hover{
+    color:#fff;
+    background: #cococo;    
+}
+.button.orange{
+    background: #ff6600;
+    border:1px solid #ff6600;    
+}
+.button.orange:hover{
+    color:#fff;
+    background: #fb9d5e;    
+}
+.button.active:active{
+    top:1px;
+}
+.button.disabled:disabled{
+    opacity: 0.65;
+}
+.button.p p{
+    position: absolute;
+    top:3px;
+    width:100%;
+    line-height: 13px;
+}
+.table{
+    top:5px;
+    left:5px;
+    width:99%;
+    position:absolute;
+    overflow:auto;
+}
+.tableClientList,.tableClientSelected{
+    border: 1px #ddd solid; 
+}
+.tableClientList{
+    top:25px;
+    left:25px;
+    width:45%;
+    position:absolute;
+    overflow: auto;
+    height: 75%;
+    border-color: gray;
+}
+.tableClientSelected{
+    top:25px;
+    left:410px;
+    width:45%;
+    position:absolute;
+    overflow: auto;
+    height: 75%;
+    border-color: gray;
+}
+.tableReturnOrder{
+    top:25px;
+    left:80px;
+    width:33%;
+    position:absolute;
+}
+.tableReturnSelected{
+    top:25px;
+    left:500px;
+    width:33%;
+    position:absolute;
+}
+.tableGiftLevel{
+    top:5px;
+    left:5px;
+    width:33%;
+    height: 75%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.tableGiftItem{
+    top:5px;
+    left:265px;
+    width:33%;
+    height: 75%;
+    position:absolute;
+    border-color: gray; 
+    overflow: auto;
+}
+.tableGiftSelected{
+    top:5px;
+    left:525px;
+    width:33%;
+    height: 75%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.tableComboGroup{
+    top:5px;
+    left:5px;
+    width:30%;
+    height: 75%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.bsTableDivJournal{
+    top:50px;
+    left:5px;
+    width:98.5%;
+    height: 75%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.tableComboMenu{
+    top:5px;
+    left:242px;
+    width:36%;
+    height: 86%;
+    position:absolute;
+    border-color: gray; 
+    overflow: auto;
+}
+.tableSelectedCombo{
+    top:5px;
+    left:526px;
+    width:33%;
+    height: 75%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.tableComboItemAdd{
+    top:150px;
+    left:526px;
+    width:33%;
+    height: 61%;
+    position:absolute;
+    border-color: gray;
+    overflow: auto;
+}
+.tableMaterials{
+    top:40px;
+    left:5px;
+    width:66%;
+    height: 86%;
+    position:absolute;
+    border-color: gray; 
+    overflow: auto;
+}
+.table th{
+    padding: 6px 6px;
+    border: 1px solid #52a8d8;
+    color: #fff;
+    background: #3697f7;
+}
+.table td{ 
+    color: #000;
+    margin-top: 2px;
+    border-bottom: 1px #44b9ec solid;
+    border-right: 1px #44b9ec solid;
+    background: #cococo;
+}
+/*
+* Font Color
+*/
+.font-white{
+    color:#ffffff!important;
+}
+.font-black{
+    color:#000000!important;
+}
+
+.showFitnessRecordInf{
+    padding-left: 5px;
+    position:absolute;
+    vertical-align:central;
+    margin-top:auto;
+    height:560px;
+    width:780px;
+    overflow:auto;
+    display: none;
+        
+}
+.recordInfDivStyle{
+    margin-top:70px;
+    margin-left:140px;        
+    width:500px;    
+    height:400px;
+    border: solid 1px;
+}
+
+#fitnesServiceTable{
+    position: relative;
+    top:0px;
+    left:0px;
+}

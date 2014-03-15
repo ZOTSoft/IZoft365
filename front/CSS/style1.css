@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* CSS Document */
+#chooseInterface{
+    position: absolute;
+    width: 500px;
+    height: 100px;
+}
+#chooseInterface button{
+    width: 160px;
+    height: 90px;
+    position: relative;
+    
+}
+#tableLocationtList button{
+    width: 160px;
+    height: 70px;
+    position: relative;
+    
+}
+#tableObjectsList button{
+    width: 160px;
+    height: 70px;
+    position: relative;
+    
+}
+.bgstyle{
+	overflow:hidden;
+        margin: 0px;
+        -webkit-user-select: none;        
+}
+.numbtn{
+	text-align:center;
+	color:#C00;
+	width:80px;
+	height:80px;
+	font-size:22px;
+	font-weight:bold;
+}
+.zerobtn{
+	text-align:center;
+	color:#C00;
+	width:164px;
+	height:80px;
+	font-size:22px;
+	font-weight:bold;
+}
+.vertbtn{
+	text-align:center;
+	color:#C00;
+	width:80px;
+	height:164px;
+	font-size:22px;
+	font-weight:bold;
+}
+.calcdiv{
+	width:99%;
+	height:99%;
+	position:absolute;
+	text-align:center;
+	background:#ffffff;
+}
+.tablestl{
+	border:solid;
+	border-width:4px;
+	border-color:#000;
+	top:20%;
+	left:37%;
+	position:absolute;
+	padding:0;
+}
+.cellstl{
+	border-color:#000;
+}
+.inputcalc{
+	width:326px;
+	height:40px;
+	font-size:26px;
+}
+.frontbtn{
+    position:absolute;  
+    margin-left:7px;
+    margin-top:7px; 
+    height:45px;
+    width:95px;
+    font-size:13px!important;    
+}
+.frontbtn.unl{
+    left:5px;
+    top:5px;
+}
+.frontbtn.rel{
+    left:105px;
+    top:5px;
+}
+.frontbtn.cl{
+    left:205px;
+    top:5px;
+}
+.frontbtn.urv{
+    left:305px;
+    top:5px;
+}
+.contactinfo{
+    font: bold 20px Times New Roman;
+    font-style: italic;
+    opacity: 0.55; 
+    position: absolute;
+    right: -9px;
+    top: 115px;
+    text-align: left;
+} 
+.contactinfo:hover{ 
+    opacity: 1;
+}
+.apinfo{
+    font: bold 22px Times New Roman;
+    font-style: italic;
+    opacity: 0.55;
+    position: absolute;
+    left: 15px;
+    top: 70px;
+    text-align: left;
+}
+.apinfo:hover{
+    opacity: 1;
+}
+
+.cookframe{
+    position: absolute;    
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    margin: 0;
+    padding:0;
+}
+.cookbody,.cookfoot,.cookhead{
+    position:relative;
+}
+.cookmain{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+.cookhead{
+    height: 33px;
+    width: 100%;
+    background-color: #1b1b1b;
+    color: #fff;
+}
+.cookbody{
+    width:100%;
+    height:100%;
+    vertical-align: top;
+}
+.cookfoot{
+    height: 80px;
+    width:100%;
+}
+.tabstatus{
+    width:300px;
+    position: absolute;
+    right: 0px;
+    top:    0px;
+    height: 100%;   
+    text-align: right;
+}
+
+/*Инфо-метки бай мелкота*/
+.infolabel{
+    position:relative;
+    width:300px;
+    height:90px;
+    margin:10px;
+    cursor:pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+    float:left;
+}
+.infolabel-success{
+    border: 4px solid #5cb85c;
+}
+.infolabel-wait{
+    border: 4px solid #2d89ef;
+}
+.infolabel-danger{
+    border: 4px solid #d9534f;
+}
+.infolabel .countdiv{
+    position:absolute;
+    color:#398439;
+    font-family:  Verdana, Arial, sans-serif;
+    font-size:13pt;
+    font-weight:900;
+    top:26px;
+    right:18px;
+}
+.infolabel .timediv{
+    position:absolute;
+    color:#398439;
+    font-family:  Verdana, Arial, sans-serif;
+    font-size:8pt;
+    font-weight:900;
+    bottom:2px;
+    right:4px;
+}
+.infolabel i{
+    display:block;
+    float:left;
+    font-size:50px;
+    margin:10px;
+}
+.infolabel span >i{
+    font-size:16px;
+    margin-top:-2px;
+    margin-left:2px;
+}
+.infolabel-success i,.infolabel-success .countdiv,.infolabel-success .timediv{
+    color:#398439;
+}
+.infolabel-wait i,.infolabel-wait .countdiv,.infolabel-wait .timediv{
+    color:#285e8e;
+}
+.infolabel-danger i,.infolabel-danger .countdiv,.infolabel-danger .timediv{
+    color:#ac2925;
+}
+.infolabel:hover{
+    outline:3px solid #959595;
+}
+.infolabel span{
+    display:block;
+    font-family:  Verdana, Arial, sans-serif;
+    margin:5px 55px 5px 5px;
+    padding-right:5px;
+    font-weight: 300;
+    font-size: 8pt;
+    padding-left:0px;
+    line-height:14px;
+    color:#555555;
+}
+.infolabel .infoname{
+    height:28px;
+    font-weight: 700;
+    font-size: 10pt;
+    padding-left:5px;
+    color:#000;
+    vertical-align:middle;
+}
+.infolabel .infofio{
+    vertical-align:top;
+}
+.infolabel .infolalka{
+    vertical-align:bottom;
+}
+.infolabel-success:before{
+    border-top: 40px solid #5cb85c;
+}
+.infolabel-wait:before{
+    border-top: 40px solid #2d89ef;
+}
+.infolabel-danger:before{
+    border-top: 40px solid #d9534f;
+}
+.infolabel:before{
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align:top;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    position: absolute;
+    display: block;
+    right: 0;
+    content: "";
+    top: 0;
+    z-index: 1001; 
+}
+.infolabel-success:after{
+    content: "\e013";
+}
+.infolabel-wait:after{
+    content: "\e023";
+}
+.infolabel-danger:after{
+    content: "\e014";
+}
+.infolabel:after{
+    position:absolute;
+    top:0;
+    right:2px;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    font-size:12pt;
+    color:#fff;
+    line-height: 1;
+    z-index: 1002;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="4.9.31" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="По умолчанию" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41430,5943315972" ReportOptions.Description.Text="" ReportOptions.LastChange="41456,689247338" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;&#13;&#10;end." PropData="044C65667403A00003546F7002380844617461736574730100095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="58" PaperHeight="297" PaperSize="256" LeftMargin="4" RightMargin="4" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMemoView Name="Memo17" Left="3,77953" Top="0" Width="181,41744" Height="18,89765" ShowHint="False" Color="0" Font.Charset="1" Font.Color="16777215" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Отказ счета №: [numschet]"/>
+    <TfrxMemoView Name="Memo1" Left="0" Top="60,47248" Width="188,9765" Height="551,81138" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[d]"/>
+    <TfrxMemoView Name="Memo15" Left="3,77953" Top="18,89765" Width="49,13389" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Дата: "/>
+    <TfrxMemoView Name="Memo16" Left="3,77953" Top="34,01577" Width="139,84261" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Официант:"/>
+    <TfrxMemoView Name="Memo19" Left="3,77953" Top="49,13389" Width="120,94496" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Стол:"/>
+    <TfrxMemoView Name="Memo23" Left="37,7953" Top="18,89765" Width="136,06308" Height="26,45671" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[dtdate]"/>
+    <TfrxMemoView Name="Memo24" Left="60,47248" Top="34,01577" Width="109,60637" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[waiter]"/>
+    <TfrxMemoView Name="Memo27" Left="34,01577" Top="49,13389" Width="147,40167" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[table]"/>
+  </TfrxReportPage>
+</TfrxReport>

@@ -1,0 +1,37 @@
+body{/* Firefox 3.6+ */
+
+background: #FFF;
+ -moz-background-size: 100%; 
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */}
+*{color: #000; font-family: Tahoma; font-size: 12px;}
+table td { padding: 5px; vertical-align: middle; }
+.login_body{
+    padding: 10px;
+    background: #F1F1F1;
+    border: 1px solid #E5E5E5;
+    width: 541px;
+    height: 211px;
+    border-radius:4px;
+
+}
+
+td, h2{border: none !important;}
+.dvv{
+    padding: 62px 0 0 93px;
+}
+.sss{
+    color: #fff;
+    font: 14px Tahoma;
+    margin-left: 192px;
+}
+h2{font:15px Tahoma; margin: 0; padding: 0 0 10px 0; }
+.inp1{width: 266px; height: 30px; padding: 0 7px; font: 15px Verdana;}
+.inp2{width: 100px; height: 30px; background: #4C8EFA; color: #fff; border: none; cursor: pointer;}
+.inp2:hover{background: #77A7F5; }
+.login_error{
+    position: absolute;
+    margin: 21px 0 0 121px;
+    color: red;
+}

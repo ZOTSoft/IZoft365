@@ -1,0 +1,14 @@
+html {
+   background: #666;
+   padding: 1em;
+}
+body {
+   border: 5px dashed #eee;
+   color: #fff; font: 3em/1.5 Helvetica, Arial, sans-serif;
+   padding: 1em;
+   width: 30em;
+   margin: 0 auto;
+}
+body::after {
+   content: 'Ebanny fantom!'; /* This needs to be on the ::after (and not just on `body`) for it to work in Firefox 3.6.x. */
+}

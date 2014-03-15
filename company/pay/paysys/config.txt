@@ -1,0 +1,8 @@
+MERCHANT_CERTIFICATE_ID = "00c183ce6e"         ; Серийный номер сертификата Cert Serial Number
+MERCHANT_NAME = "Paloma Service"            ; Название магазина (продавца) Shop/merchant Name
+PRIVATE_KEY_FN = "pay/paysys/paloma.prv"            ; Путь к закрытому ключу Private cert path
+PRIVATE_KEY_PASS = "1q2w3e4r"            ; Пароль к закрытому ключу Private cert password
+XML_TEMPLATE_FN = "pay/paysys/template.xml"    ; Путь к XML шаблону XML template path
+XML_COMMAND_TEMPLATE_FN = "pay/paysys/command_template.xml"    ; Путь к XML шаблону для команд (возврат/подтверждение)
+PUBLIC_KEY_FN = "pay/paysys/kkbca.pem"        ; Путь к открытому ключу Public cert path
+MERCHANT_ID="92131901"                ; Терминал ИД в банковской Системе

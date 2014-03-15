@@ -1,0 +1,465 @@
+@charset "utf-8";
+/* CSS Document */
+.cashierframediv{
+	display:none;
+	height:100%;
+	width:100%;
+	position:absolute;	
+}
+#ordertableC{
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+#billsorder{
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+#ordertable{
+    position: absolute;
+    top:0px;
+    left:0px;    
+}
+#selectgrid{
+    position: absolute;
+    top:0px;
+    left:0px;     
+}
+.filterbtnsC{
+	width:99%;
+	height:95px;
+	position:relative;	
+}
+.ordersgridC{
+	width:80%;
+	height:99%;
+	position:relative;
+        overflow:auto;
+}
+.reportsC{
+	width:20%;
+	height:99%;
+	position:relative;	
+}
+.cashiertable{
+	position:relative;
+	width:100%;
+	height:100%;	
+    background: white;
+}
+.btnchangeOpen{
+	position:absolute;
+	right:10px;
+	top:5px;
+	height:40px;
+	font-size:18px;
+}
+.btnchangeClose{
+	position:absolute;
+	right:11px;
+	top:48px;
+	height:40px;	
+	font-size:18px;
+}
+.exitbtnC{
+	position:absolute;
+	right:10px;
+	bottom:2px;
+	width:160px;
+	height:37px;	
+	font-size:18px;
+}
+.headercashiername{
+    position:absolute;
+    font:bold Arial, Helvetica, sans-serif;
+    font-size:21px;
+    text-shadow:0 -1px 2px #000;
+    color:#fff;    
+    top:10px;
+}
+.hposС1{
+    left:8px;
+}
+.cashiername{
+    position:absolute;
+    height:25px;
+    width:160px;
+    font-size:20px;
+    text-align:center;
+    top:0px;
+}
+.chposС1{
+    left:186px;
+}
+.filterbtn{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;
+    height:38px;
+    top:45px;
+    font-size:12px;
+}
+
+.fitnesShowRecordBtn{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;
+    height:38px;
+    top:5px;
+    font-size:12px;
+}
+
+.fbtnpos1{
+    left:10px;    
+    width:130px;  
+}
+.fbtnpos2{
+    left:150px;    
+    width:150px;   
+}
+.fbtnpos3{
+    left:310px;    
+    width:100px;       
+}
+.fbtnpos4{
+    left:420px;    
+    width:100px;       
+}
+.printbtnC{
+    position:absolute;
+    right:5px;
+    top:0px;
+    margin-top:7px;
+    width:95%;
+    height:40px;    
+    font-size:22px;
+}
+.viewebtnC{
+    position:absolute;
+    right:5px;
+    top:50px;
+    margin-top:7px;
+    width:95%;
+    height:40px;    
+    font-size:22px;
+}
+.reportsbtnC{
+    /*position:absolute;*/
+    right:5px;
+    margin-top:7px;
+    width:95%;
+    height:35px;    
+    font-size:18px;
+}
+.report1pos{
+    top: 260px;
+}
+.report2pos{
+    top: 215px;
+}
+.report3pos{
+    top: 170px;
+}
+.reportXpos{
+    top: 305px;
+}
+.report4pos{
+    top: 350px;
+}
+.report5pos{
+    top: 395px;
+}
+.report6pos{
+    top: 440px;
+}
+.report7pos{
+    top: 485px;
+}
+.reportlabelpos{
+    top: 150px !important;
+    left: 50px !important;
+    font-size: 22px !important;
+}
+/*Фильтры*/
+    .switch {
+        z-index: 9999;
+        position: absolute;
+        padding: 0;
+        top:55px;
+        left:10px;
+        width:550px;
+    }
+    
+    .switch input {
+        position: absolute;
+        opacity: 0;
+    }
+    .switch label {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .switch .slide-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 1;
+        width: 50%;
+        height: 100%;
+    }
+    .switch input:last-of-type:checked ~ .slide-button {
+        left: 50%;
+    }
+    .switch.switch-three label,
+    .switch.switch-three .slide-button {
+        width: 33.3%;
+    }
+    .switch.switch-three input:checked:nth-of-type(2) ~ .slide-button {    
+        left: 33.3%;
+    }
+    .switch.switch-three input:checked:last-of-type ~ .slide-button {
+        left: 66.6%;
+    }
+    .switch.switch-four label,
+    .switch.switch-four .slide-button {
+        width: 25%;
+}
+    .switch.switch-four input:checked:nth-of-type(2) ~ .slide-button {    
+        left: 25%;
+    }
+    .switch.switch-four input:checked:nth-of-type(3) ~ .slide-button {    
+        left: 50%;
+    }
+    .switch.switch-four input:checked:last-of-type ~ .slide-button {
+        left: 75%;
+    }
+    .switch.switch-five label,
+    .switch.switch-five .slide-button {
+        width: 20%;
+    }
+    .switch.switch-five input:checked:nth-of-type(2) ~ .slide-button {    
+        left: 20%;
+    }
+    .switch.switch-five input:checked:nth-of-type(3) ~ .slide-button {    
+        left: 40%;
+    }
+    .switch.switch-five input:checked:nth-of-type(4) ~ .slide-button {    
+        left: 60%;
+    }
+    .switch.switch-five input:checked:last-of-type ~ .slide-button {
+        left: 80%;
+    }
+    .toggle,
+    .switch {
+        display: block;
+        height: 30px;
+    }
+    .switch *,
+    .toggle * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .switch .slide-button,
+    .toggle .slide-button {
+        display: block;    
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+    .toggle label,
+    .toggle p,
+    .switch label {
+        line-height: 30px;
+        vertical-align: middle;
+    }
+    .toggle input:checked ~ .slide-button {
+        right: 50%;
+    }
+    .toggle input:focus ~ .slide-button,
+    .switch input:focus + label {
+        outline: 1px dotted #888;
+    }
+    .switch, .toggle {
+        -webkit-animation: bugfix infinite 1s;
+    }
+.ios {
+        background: -webkit-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+        background: -moz-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+        background: -o-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+        background: -ms-linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+        background: linear-gradient(top, #cfcfcf, #efefef 50%, #f9f9f9 50%, #fefefe);
+        
+        -webkit-box-shadow: inset 0 2px 2px #b6b6b6, inset 3px 0 3px #b6b6b6;
+        box-shadow: inset 0 2px 2px #b6b6b6, inset 3px 0 3px #b6b6b6;
+
+        border: 1px solid #efefef;
+        border-radius: 3px;
+        
+        color: #000000;
+        font: bold 14px sans-serif; 
+        text-align: center;
+        text-shadow: none;
+    }
+
+    .ios.toggle .slide-button {
+        border: 1px solid #919191;
+        background: -webkit-linear-gradient(top, #cdcdcd, #fbfbfb);
+        background: -moz-linear-gradient(top, #cdcdcd, #fbfbfb);
+        background: -o-linear-gradient(top, #cdcdcd, #fbfbfb);
+        background: -ms-linear-gradient(top, #cdcdcd, #fbfbfb);
+        background: linear-gradient(top, #cdcdcd, #fbfbfb);
+        
+        border-radius: 3px;
+        
+        -webkit-box-shadow: inset 0 1px 0 #f0f0f0;
+        box-shadow: inset 0 1px 0 #f0f0f0;
+    }
+    .ios.toggle input:first-of-type:checked ~ p span:first-child,
+    .ios.switch input:checked + label {
+        color: #fff;
+        text-shadow: 0 -1px 0 #1b3b6f;
+    }
+
+    .ios.toggle input:first-of-type:checked ~ .slide-button,
+    .ios.switch .slide-button {
+        background: -webkit-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+        background: -moz-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+        background: -o-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+        background: -ms-linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+        background: linear-gradient(top, #3672dc, #4085ec 50%, #4d8fef 50%, #76adfc);
+        border-radius: 3px;
+        border: 1px solid #1654b5;
+        text-align: center;
+        color: #fff;
+        font: bold 14px sans-serif; 
+        text-shadow: 0 -1px 0 #1b3b6f;
+    }
+    .ios.toggle p span {
+        color: #7f7f7f;
+    }
+/*Конец фильтров*/
+/*Статус*/
+.statuscashier{
+   position:relative;
+   width:80%;
+   height:40px; 
+}
+.datetimecashier{
+    width: 310px;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 200px;
+    font-size: 50px;  
+    color: white;
+}
+.infoposC{
+    left:190px !important;
+    top:17px !important;
+}
+.otchet_div{
+    position:absolute; 
+    left:0; 
+    top:0; 
+    width:100%; 
+    height:100%; 
+    background:#FFFFFF; 
+    z-index:999999;   
+    overflow: auto;
+}
+#otchet_close{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    height:35px;
+    width:95px;
+    text-align:center;
+    padding-top:10px;    
+    font-size:13px;
+}
+#otchet_print{
+    position:absolute;
+    right:10px;
+    bottom:50px;
+    height:25px;
+    width:95px;
+    text-align:center;
+    padding-top:10px;
+    font-size:14px;
+}
+.unlockbtnC{
+    position:absolute;
+    right:5px;
+    top:100px;
+    margin-top:7px;
+    width:95%;
+    height:40px;    
+    font-size:22px;
+}
+.stopListbtnC{
+    position: absolute;
+    left: 290px;
+    top: 5px;
+    width: 200px;
+    height: 60px;
+}
+.divideOrderbtnC{
+    position: absolute;
+    left: 290px;
+    top: 80px;
+    width: 200px;
+    height: 60px;
+}
+.returnbtnC{
+    position: absolute;
+    left: 290px;
+    top: 155px;
+    width: 200px;
+    height: 60px;
+}
+.optionBtnCloseС{
+    position: absolute;
+    left: 660px;
+    top: 50px;
+    width: 100px;
+    height: 40px;
+}
+.comboCreateBtnC{
+    position: absolute;
+    left: 290px;
+    top: 230px;
+    width: 200px;
+    height: 60px;
+}
+.changeEmployeeC{
+    position: absolute;
+    left: 290px;
+    top: 370px;
+    width: 200px;
+    height: 60px;
+}
+.printStickerBtn{
+    position: absolute;
+    left: 290px;
+    top: 305px;
+    width: 200px;
+    height: 60px;
+}
+.optionBtnC{
+    position: absolute;
+    left: 430px;
+    top: 50px;
+    width: 110px;
+    height: 40px;
+}

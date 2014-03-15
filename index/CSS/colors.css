@@ -1,0 +1,50 @@
+/*Background Color*/
+.bg{
+    font-family: "Arial";
+    font-weight: bold;
+    display: table;
+    opacity: 0.9;
+    border: none;
+    padding: .5em 2em .55em;
+    transition: 0.2s all ease; 
+    -moz-transition: 0.2s all ease; 
+    -webkit-transition: 0.2s all ease; 
+    -o-transition: 0.2s all ease; 
+    -ms-transition: 0.2s all ease;
+}
+.bg.lightblue{
+    background: #0072C6;
+    color: #FFFFFF;
+}
+.bg.blue{
+    background: #0000FF;
+    color: #FFFFFF;    
+}
+.bg.forestGreen{
+    background: #228B22;
+    color: #FFFFFF;    
+}
+.bg.steelBlue{
+    background: #4682B4;
+    color: #FFFFFF;    
+}
+.bg.orange{
+    background: #D24726;
+    color: #FFFFFF;    
+}
+.bg.red{
+    background: #AC193D;
+    color: #FFFFFF;    
+}
+.bg.skyBlue{
+    background: #094AB2;
+    color: #ffffff;
+}
+.bg.hover:hover{
+    opacity:1;
+    border-left:0.3em solid #000;
+}
+.bg.active:active{
+    color: white !important; 
+    background-color: #191919 !important; 
+}

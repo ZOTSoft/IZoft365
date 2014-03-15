@@ -1,0 +1,636 @@
+@charset "utf-8";
+/* CSS Document */
+.pricecell{
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    color: #fff!important;
+    border: none!important;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+/*Калькулятор для ввода кол-ва - Начало*/
+/*Форма оплаты временное дублированние - Начало*/
+.chosepaybtnpos1{
+    left:6px;
+    top:210px;
+}
+.chosepaybtnpos2{
+    left:6px;
+    top:275px;
+}
+.chosepaybtnpos3{
+    left:210px;
+    top:210px;
+    font-size:13px; 
+}
+.chosepaybtnpos4{
+    left:210px;
+    top:275px;
+}
+.chosepaybtnpos5{
+    left:6px;
+    top:275px;
+}
+.chosepaylabel{
+    left:10px;
+    position:absolute;
+    font:bold Arial, Helvetica, sans-serif;
+    font-size:34px;
+    text-shadow:0 -1px 2px #fff;
+    color:#000;        
+}
+.chosepaylabelpos1{
+    top:4px;
+}
+.chosepaylabelpos2{
+    top:100px;
+}
+.chosepaysumdivstyle{
+    position: absolute;
+    left: 10px;
+    width:368px;
+    height:45px;
+    font-size:40px; 
+}
+.sumdivpos1{
+    top:45px;
+}
+.balansedivpos1{
+    top:145px;    
+}
+.chosepaybtns{
+    position:absolute;
+    width: 400px;
+    height: 370px;
+    top:10px;
+    right:5px;
+}
+.chosepaybtns button{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;
+    height:55px;
+    width:163px;
+    font-size:22px;
+}
+/*Форма оплаты временное дублированние - Конец*/
+/*Калькулятор для ввода кол-ва - Начало*/
+.incalcdivstyle{
+    position:absolute;
+    vertical-align:central;
+    height:390px;
+    width:335px;
+}
+.incalcstyle{
+    position: absolute;
+    margin-top:0px;
+    left: 15px;
+}
+.incalcstyle button{
+    width:70px;
+    height:70px;     
+    position: relative;
+    font-size: 30px!important;
+}
+.inbtnV{
+    width:70px!important;
+    height:145px!important;
+}
+.inbtnH{
+    width:145px!important;
+    height:70px!important;
+}
+.Hsave1:after{
+    content:"\2714";
+    font-size:48px;
+}
+.Hsave2:after{
+    content:"\2408\000d\2190";
+    font-size:48px;
+}
+/*Калькулятор для ввода кол-ва - Конец*/
+/*Затемненный фон - Начало*/
+.glass {
+    opacity: 0.3;
+    background: black;
+    position:absolute;
+    top:2px;
+    left:2px;
+    display:none;
+    height:100%;
+    width:100%;    
+}
+/*Затемненный фон - Конец*/
+/*Выбор из списка - Начало*/
+.cancelbtn{
+    height:99%;
+    width:50%;
+}
+.selectbtns{
+        bottom: 1px;
+        left: 5px;
+    position:absolute;
+    height:65px;
+        width: 95%;
+        display: inline-table;
+        padding-left: 5px;
+}
+.selectbtns button{
+    position: relative;
+    height:99%;
+    width:33%;    
+}
+.selectbtnsGift{
+        bottom: 1px;
+        left: 5px;
+        position:absolute;
+        height:65px;
+        width: 40%;
+        display: inline-table;
+        padding-left: 5px;
+}
+.selectbtnsReturn{
+        bottom: 1px;
+        left: 230px;
+        position:absolute;
+        height:65px;
+        width: 40%;
+        display: inline-table;
+        padding-left: 5px;
+}
+.selectbtnsTableClient{
+        bottom: 1px;
+        left: 230px;
+        position:absolute;
+        height:65px;
+        width: 40%;
+        display: inline-table;
+        padding-left: 5px;
+}
+.selectbtnsComboAddForm{
+        bottom: 67px;
+        left: 2px;
+        position: absolute;
+        height: 65px;
+        width: 30%;
+        display: inline-table;
+        padding-left: 5px;
+}
+.selectbtnsTableClientFilter{
+        bottom: 40%;
+        left: 60%;
+        position: absolute;
+        height: 65px;
+        width: 40%;
+        display: inline-table;
+        padding-left: 5px;
+}
+
+.selectbtnsTableClient button{
+    position: relative;
+    height:99%;
+    width:50%;    
+}
+
+.selectbtnsReturn button{
+    position: relative;
+    height:99%;
+    width:50%;    
+}
+
+.selectbtnsGift button{
+    position: relative;
+    height:99%;
+    width:50%;    
+}
+.selectdiv{
+    padding-left: 5px;
+    position:absolute;
+    vertical-align:central;
+    margin-top:auto;
+    height:500px;
+    width:400px;
+    
+}
+.comboMenuFormStyle{
+    padding-left: 5px;
+    position:absolute;
+    vertical-align:central;
+    margin-top:auto;
+    height:580px;
+    width:780px;
+}
+.selectGiftForm{
+    padding-left: 5px;
+    position:absolute;
+    vertical-align:central;
+    margin-top:auto;
+    height:500px;
+    width:780px;
+}
+.bsJournalForm{
+    padding-left: 5px;
+    position:absolute;
+    vertical-align:central;
+    margin-top:auto;
+    height:98%;
+    width:98%;
+    border:solid 1px;
+}
+/*Выбор из списка - Конец*/
+.headerlable{
+    position:absolute;
+    font:bold Arial, Helvetica, sans-serif;
+    font-size:21px;
+    color:#fff;    
+    top:10px;
+}
+.hpos1{
+    left:8px;
+}
+.hpos2{
+    left:370px;
+}
+.hpos3{
+    left:618px;
+}
+.chstyle{
+    position:absolute;
+    height:25px;
+    width:160px;
+    font-size:20px;
+    text-align:center;
+    top:0px;
+}
+.chpos1{
+    left:186px;
+}
+.chpos2{
+    left:80px;
+}
+.chpos3{
+    top:10px;
+    left:649px;
+}
+.labelstyles{    
+    position:absolute;
+    font:bold Arial, Helvetica, sans-serif;
+    font-size:18px;
+    text-shadow:0 -1px 2px #eeeeee;
+    color:#000; 
+}
+.oficaintframe{
+    height:100%;
+    width:100%;
+    position:absolute;
+    overflow:hidden;
+}
+.oficiantmain{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background: white;
+}
+.orderbtns{
+    position:relative;
+    width:485px;
+    height:40px;
+}
+.orderbtns button{
+    height: 90%;
+    font-size: 18px;
+}
+#menudiv{
+    height:99%;
+    overflow:auto;
+}
+#menudiv button{
+    position:relative;
+    margin-left:7px;
+    margin-top:7px;
+    height:60px;
+    width:120px;
+    font-size:13px;   
+        padding-left: 0px;
+}
+#menudivCombo{
+    height:99%;
+    overflow:auto;
+}
+#menudivCombo button{
+    position:relative;
+    margin-left:7px;
+    margin-top:7px;
+    height:60px;
+    width:120px;
+    font-size:13px;   
+        padding-left: 0px;
+}
+#menudivMaterials{
+    height:99%;
+    overflow:auto;
+}
+#menudivMaterials button{
+    position:relative;
+    margin-left:7px;
+    margin-top:7px;
+    height:60px;
+    width:120px;
+    font-size:13px;   
+        padding-left: 0px;
+}
+.infocell{
+    height:170px;
+    width:485px;
+    float:left;
+    position:relative;
+}
+.infocell div,input{
+    position:absolute;
+    height:22px;    
+    text-decoration:none;
+    color:#000;
+    font-size:19px;
+}
+.infocell button{
+    position:absolute;
+    margin-left:7px;
+    margin-top:7px;   
+    height:28px;
+    width:50px;
+    text-decoration:none;
+    color:#fff;
+    font-size:9px;
+}
+.headercell{    
+    height:35px;
+    width:99%;
+}
+.menucell{
+    position: relative;
+    margin-left: 3px;
+    vertical-align: top;
+    width:99%;
+    overflow: hidden;
+}
+.menucell button{
+    position:relative;
+}
+.menucellCombo{
+    position: relative;
+    margin-left: 3px;
+    vertical-align: top;
+    width:99%;
+    overflow: hidden;
+}
+.menucellCombo button{
+    position:relative;
+}
+
+.menucellMaterials{
+    position: relative;
+    margin-left: 3px;
+    vertical-align: top;
+    width:99%;
+    overflow: hidden;
+}
+.menucellMaterials button{
+    position:relative;
+}
+
+.orderidcell{
+    display:none;
+    height:25px;
+}
+.ordercell{
+    position:relative;
+    height:99%;
+    width:485px;
+    overflow:auto;
+}
+.orderrow{
+    position:relative;
+}
+.ordertable{
+    top:5px;
+    left:5px;
+    width:99%;
+    position:absolute;
+    overflow:auto;
+}
+/*InfoCell - Кнопки и дивы*/
+.backbtn{
+    left:375px;
+    top:122px;
+    height:35px!important;
+    width:95px!important;
+    font-size:13px!important;
+}
+.exitbtn{
+    left:240px;
+    top:120px;
+    height:40px!important;
+    width:80px!important;
+    font-size:14px!important;
+}
+.bsJournal{
+    left:395px;
+    top:120px;
+    height:40px!important;
+    width:80px!important;
+    font-size:14px!important;
+}
+.printbtn{
+    left:155px;
+    top:120px;
+    height:40px!important;
+    width:80px!important;
+        font-size:14px!important;
+}
+.printdiv{
+    height:33px!important;
+    width:170px;
+    left:5px;
+    top:130px;
+    font-size:30px!important;
+}
+/*Верхний ряд кнопок(Клиент  Стол Скидка Сервис)*/
+.shtrihbtnOF{
+    top:69px;
+    left:160px;
+}
+.shtrihbtnOFmaterials{
+    top:69px;
+    left:160px;
+}
+.shtrihOF{
+    position: absolute;
+    width:170px;
+    top:77px;
+    left:5px;
+}
+.shtrihOFmaterials{
+    position: absolute;
+    width:260px;
+    top:10px;
+    left:5px;
+}
+.clientbtn{
+    top:16px;
+    left:160px;
+}
+.clientdiv{
+    width:170px;
+    top:25px;
+    left:5px;
+}
+.searchField{
+    width: 250px;
+}
+.tablebtn{
+    top:16px;
+    left:300px;
+}
+.tablediv{
+    width:90px;
+    top:25px;
+    left:225px;
+}
+.servicebtn{
+    top:69px;
+    left:425px;
+}
+.servicediv{
+    width:80px;
+    top:78px;
+    left:365px;
+}
+.salebtn{
+    top:16px;
+    left:425px;
+}
+.salediv{
+    width:80px;
+    top:25px;
+    left:365px;
+}
+.countbtn{
+    top:69px;
+    left:300px;
+}
+.employeeSelectBtn{
+    top:69px;
+    left:425px;
+}
+.countdiv{
+    width:95px;
+    top:78px;
+    left:225px;
+}
+.employeeSelectDiv{
+    width:210px;
+    top:78px;
+    left:225px;
+}
+/*Надписи Клиент Стол Сервис Скидка*/
+.lpos1{
+    left:10px;
+    top:5px;
+}
+.lpos2{
+    left:235px;
+    top:5px;
+}
+.lpos3{
+    left:370px;
+    top:5px;
+}
+.lpos4{
+    left:370px;
+    top:55px;
+}
+.lpos5{
+    left:235px;
+    top:55px;
+}
+.lpos6{
+    left:10px;
+    top:55px;
+}
+.lpos7{
+    left:11px;
+    top:104px;
+    font: 22px bold;
+}
+/*Часики*/
+
+.time {
+        width: 300px;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+     position:absolute;
+    top:1px;
+    right:10px;
+    font-size: 40px;  
+    color: white;
+}
+#Date {
+        font-family:Tahoma, Geneva, sans-serif;
+        font-size:12px;
+        text-align:center;
+        text-shadow:0 0 5px #000;
+        font-weight: bold;
+}
+ul {
+        width:200px;
+        margin:0 auto;
+        padding:0px;
+        list-style:none;
+        text-align:center;
+}
+ul li {
+        display:inline;
+        font-size:22px;
+        text-align:center;
+        font-family:Tahoma, Geneva, sans-serif;
+        color:#FFF;
+        text-shadow:0 0 5px #000;
+        font-weight: bold;
+}
+ 
+#point {
+        position:relative;
+        padding-left:10px;
+        padding-right:10px;
+}
+.jurnal_css td{
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    width:150px;
+    min-width: 150px;
+    height:20px;
+    min-height: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+.jurnal_css{
+    border-spacing: 0px;
+    border-collapse: 0px;
+    border: 1px solid #000;
+}
+.jurnal_css .h_css{
+    width:50px;
+}
+.jurnal_css div{
+    border: 1px solid #000;
+    position: absolute;
+    background-color: #42c842;
+    overflow:hidden;
+    width:150px;
+    height:20px;
+    min-height: 10px;
+    
+}

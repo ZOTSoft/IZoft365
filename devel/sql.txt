@@ -1,0 +1,1394 @@
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdorderunlock`  varchar(250) NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `zreportonclose`  tinyint(1) NULL DEFAULT 0;
+
+INSERT INTO `z_rights_category` VALUES ('31', null, null, '4', '0', 'Примечания', 's_note', '20');
+
+CREATE TABLE `s_note` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `itemid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `t_order`
+ADD COLUMN `note`  varchar(255) NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdrefuse`  varchar(100) NULL
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdrefuse`  varchar(100) NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `timezone`  varchar(50) NULL;
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `printsubord` tinyint(1) NULL DEFAULT 1 AFTER `printsubordinfastfood`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `printorder`  tinyint(1) NULL DEFAULT 1 AFTER `printsubord`,
+ADD COLUMN `printorderpay`  tinyint(1) NULL DEFAULT 1 AFTER `printorder`;
+
+
+INSERT INTO `z_rights_category` VALUES ('32', null, null, '5', '0', 'Отказы', 'gethtml_refuse', '23');
+INSERT INTO `z_rights_category` VALUES ('33', null, null, '5', '0', 'Отказы и заказы', 'gethtml_refuse_and_orders', '23');
+
+ALTER TABLE `s_clients`
+ADD COLUMN `servicepercent`  int(11) NULL DEFAULT '-1' AFTER `discount`;
+
+ALTER TABLE `t_order`
+ADD COLUMN `note`  varchar(255) NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `session_count` int(11) NULL DEFAULT 1;
+CREATE TABLE `z_ap_activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apid` int(11) DEFAULT NULL,
+  `isonline` tinyint(1) DEFAULT '0',
+  `last_action` int(11) DEFAULT NULL,
+  `cookie_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+
+CREATE TABLE `t_workplace` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `login` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `isonline` tinyint(1) DEFAULT '0',
+  `last_action` int(11) DEFAULT NULL,
+  `cookie_key` varchar(100) COLLATE utf8_bin DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+INSERT INTO `z_rights_category` VALUES ('34', null, null, '4', '0', 'Рабочее место', 't_workplace', '12');
+
+ALTER TABLE `t_workplace`
+ADD COLUMN `apid`  int(11) NULL AFTER `cookie_key`;
+
+ALTER TABLE `d_order`
+ADD COLUMN `wpid`  int(11) NULL DEFAULT 0;
+
+
+INSERT INTO `z_rights_category` VALUES ('35', null, null, '5', '0', 'Отчет по продажам по часам', 'gethtml_hoursales', '23');
+
+
+CREATE TABLE `tbgiftlevels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `leveltype` int(11) NOT NULL DEFAULT '0',
+  `levelnum` int(11) NOT NULL DEFAULT '1',
+  `pointscount` int(11) NOT NULL DEFAULT '5',
+  `productcount` float(15,3) NOT NULL DEFAULT '0.000',
+  `linkid` int(11) NOT NULL DEFAULT '0',
+  `price` int(11) NOT NULL DEFAULT '1000',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `levelnum` (`levelnum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `tbgifts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `levelid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `z_rights_category` VALUES ('36', null, null, '4', '0', 'Уровни подарков', 's_giftlevels', '22');
+INSERT INTO `z_rights_category` VALUES ('37', null, null, '4', '0', 'Подарки', 's_gifts', '21');
+
+CREATE TABLE `s_giftlevels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `leveltype` int(11) NOT NULL DEFAULT '0',
+  `levelnum` int(11) NOT NULL DEFAULT '1',
+  `pointscount` int(11) NOT NULL DEFAULT '5',
+  `itemcount` float(15,3) NOT NULL DEFAULT '0.000',
+  `itemid` int(11) NOT NULL DEFAULT '0',
+  `price` int(11) NOT NULL DEFAULT '1000',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `levelnum` (`levelnum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `s_gifts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `levelid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `d_balance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employeeid` int(11) NOT NULL,
+  `clientid` int(11) NOT NULL,
+  `orderid` int(11) NOT NULL,
+  `deposit` float(15,2) NOT NULL DEFAULT '0.00',
+  `points` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `with_gifts`  tinyint(1) NULL DEFAULT;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `with_gifts`  tinyint(1) NULL DEFAULT 0;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `giftpaytype`  int(11) NULL DEFAULT 0;
+
+ALTER TABLE `s_clients`
+ADD COLUMN `shtrih`  varchar(255) NULL AFTER `servicepercent`;
+
+ALTER TABLE `s_discount`
+ADD COLUMN `usediscountsincafe`  tinyint(1) NULL DEFAULT 0 AFTER `sumvalue`,
+ADD COLUMN `usediscountsinfastfood`  tinyint(1) NULL DEFAULT 0 AFTER `usediscountsincafe`,
+ADD COLUMN `usegiftsincafe`  tinyint(1) NULL DEFAULT 0 AFTER `usediscountsinfastfood`,
+ADD COLUMN `usegiftsinfastfood`  tinyint(1) NULL DEFAULT 0 AFTER `usegiftsincafe`,
+ADD COLUMN `useserviceincafe`  tinyint(1) NULL DEFAULT 0 AFTER `usegiftsinfastfood`,
+ADD COLUMN `servicepercent`  int(11) NULL DEFAULT '-1' AFTER `useserviceincafe`;
+
+
+ALTER TABLE `d_order`
+ADD COLUMN `discountid`  int(11) NULL DEFAULT 0 AFTER `wpid`,
+ADD COLUMN `interfaceid`  int(11) NULL DEFAULT 0 AFTER `discountid`;
+
+
+
+ALTER TABLE `s_discount`
+ADD COLUMN `useserviceinfastfood`  tinyint(1) NULL DEFAULT 0 AFTER `servicepercent`;
+
+
+ALTER TABLE `s_clients`
+MODIFY COLUMN `fullname`  varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `name`,
+MODIFY COLUMN `partnertype`  tinyint(1) NULL DEFAULT 0 AFTER `fullname`;
+
+
+CREATE TABLE `s_shtrih` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `itemid` int(11) DEFAULT NULL,
+  `shtrih` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `z_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NULL DEFAULT NULL,
+  `desc` varchar(250) COLLATE utf8_bin DEFAULT NULL,
+  `ip` bigint(11) DEFAULT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `usertype` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `t_employee_workplace` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `employeeid` int(11) DEFAULT NULL,
+  `wpid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `d_employee_session` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `employeeid` int(11) DEFAULT '0',
+  `interfaceid` int(11) DEFAULT '0',
+  `isonline` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `d_balance`
+ADD COLUMN `dt`  timestamp NULL DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE `s_clients`
+ADD COLUMN `birthday`  date NULL AFTER `shtrih`,
+ADD COLUMN `email`  varchar(250) NULL AFTER `birthday`,
+ADD COLUMN `phone`  varchar(100) NULL AFTER `email`,
+ADD COLUMN `address`  varchar(250) NULL AFTER `phone`,
+ADD COLUMN `info`  varchar(250) NULL AFTER `address`;
+
+
+ALTER TABLE `t_order`
+MODIFY COLUMN `price`  float(11,3) NULL DEFAULT NULL AFTER `itemid`,
+MODIFY COLUMN `sum`  float(11,3) NULL DEFAULT NULL AFTER `price`,
+MODIFY COLUMN `quantity`  float(11,3) NULL DEFAULT NULL AFTER `sum`;
+
+
+ALTER TABLE `z_logs`
+ADD COLUMN `type`  int(11) NULL DEFAULT 0 AFTER `usertype`;
+
+
+ALTER TABLE `s_discount`
+ADD COLUMN `usebalanceincafe`  tinyint(1) NULL DEFAULT 0 AFTER `useserviceinfastfood`,
+ADD COLUMN `usebalanceinfastfood`  tinyint(1) NULL DEFAULT 0 AFTER `usebalanceincafe`;
+
+
+
+ALTER TABLE `s_objects`
+ADD COLUMN `servicepercent` int(11) NULL DEFAULT 0;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `usechoosetable` tinyint(1) NULL DEFAULT 0;
+
+
+ALTER TABLE `s_menu`
+ADD COLUMN `lastupdate` datetime NULL DEFAULT NULL;
+
+
+
+
+ALTER TABLE `s_objects`
+MODIFY COLUMN `servicepercent` int(11) NULL DEFAULT -1;
+
+ALTER TABLE `t_order`
+MODIFY COLUMN `price` float(11,3) DEFAULT NULL,
+MODIFY COLUMN `sum` float(11,3) DEFAULT NULL,
+MODIFY COLUMN `quantity` float(11,3) DEFAULT NULL;
+
+ALTER TABLE `s_automated_point`
+`printserverip` varchar(50) COLLATE utf8_bin DEFAULT 'localhost:12345';
+
+ALTER TABLE `s_automated_point`
+add column
+`printserverip` varchar(50) COLLATE utf8_bin DEFAULT 'localhost:12345';
+
+ALTER TABLE `s_automated_point`
+add column
+`uselocation` tinyint(1) DEFAULT '0';
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdclient`  varchar(100) NULL;
+
+CREATE TABLE `d_stop_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employeeid` int(11) DEFAULT NULL,
+  `dt` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `apid` int(11) DEFAULT NULL,
+  `menu_item_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `d_order`
+ADD COLUMN `barcode`  varchar(20) NULL;
+
+ALTER TABLE `d_order`
+MODIFY COLUMN `dtclose`  timestamp NOT NULL AFTER `closed`;
+
+ALTER TABLE `d_order`
+MODIFY COLUMN `dtclose`  timestamp NOT NULL AFTER `closed`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdReturn`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL AFTER `pwdclient`,
+ADD COLUMN `pwdStopList`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL AFTER `pwdReturn`,
+ADD COLUMN `pwdDivide`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL AFTER `pwdStopList`;
+
+
+ALTER TABLE `s_employee`
+ADD COLUMN `front2company`  tinyint(1) NULL DEFAULT 0 AFTER `cookie_key`;
+
+
+INSERT INTO `z_rights_category` VALUES ('38', null, null, '5', '0', 'Отчет по сотрудникам', 'gethtml_posotr', '24');
+
+ALTER TABLE `s_automated_point` 
+ADD COLUMN  `askCount` tinyint(1) DEFAULT '1',
+ADD COLUMN  `pwdChangePrice` varchar(100) COLLATE utf8_bin DEFAULT '',
+ADD COLUMN  `useChangePrice` tinyint(1) DEFAULT '0';
+
+ALTER TABLE `s_automated_point`
+MODIFY COLUMN `useChangePrice` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdChangePrice`,
+ADD COLUMN `pwdReprortAktReal` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `useChangePrice`,
+ADD COLUMN `pwdReportPoSchetam` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdReprortAktReal`,
+ADD COLUMN `pwdReportItogoviyReport` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL AFTER `pwdReportPoSchetam`,
+ADD COLUMN `pwdReportZakazOtkaz` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdReportItogoviyReport`,
+ADD COLUMN `pwdReportOtkaz` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdReportZakazOtkaz`,
+ADD COLUMN `pwdReportX` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdReportOtkaz`;
+
+CREATE TABLE `d_urv_transactions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `state` int(11) DEFAULT NULL,
+  `id_employee` int(11) DEFAULT NULL,
+  `id_timeTable` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `s_pointurv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `login` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `z_rights_category` VALUES ('39', null, null, '0', '0', 'Таб - Учет рабочего времени', 'tab_urv', '30');
+INSERT INTO `z_rights_category` VALUES ('40', null, null, '0', '0', 'Рабочее место', 's_pointurv', '31');
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `idpointurv` int(11) NULL DEFAULT 0 AFTER `useURV`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `useURV` tinyint(1) NULL DEFAULT 0,
+ADD COLUMN `idpointurv` int(11) NULL DEFAULT 0;
+
+ALTER TABLE `s_automated_point`
+CHANGE COLUMN `pwdReprortAktReal` `pwdReportAktReal`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `useChangePrice`;
+
+ALTER TABLE `s_pointurv`
+ADD COLUMN `cookie_key`  varchar(100) NULL AFTER `password`,
+ADD COLUMN `last_action`  int(11) NULL AFTER `cookie_key`,
+ADD COLUMN `isonline`  tinyint(1) NULL AFTER `last_action`;
+
+
+ALTER TABLE `d_urv_transactions`
+ADD COLUMN `id_pointurv`  int(11) NULL AFTER `id_timeTable`;
+
+ALTER TABLE `s_automated_point`
+MODIFY COLUMN `pwdAddClientFromFront`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `idpointurv`;
+
+ALTER TABLE `s_automated_point`
+MODIFY COLUMN `pwdAddClientFromFront`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '';
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdAddClientFromFront`   varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '';
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdClose`  varchar(100) NULL;
+
+INSERT INTO `z_rights_category` VALUES ('41', null, null, '0', '0', 'Таб - Визитка', 'tab_visitcard', '32');
+INSERT INTO `z_rights_category` VALUES ('42', null, null, '41', '0', 'Визитка', 'visitcard', '33');
+INSERT INTO `z_rights_category` VALUES ('43', null, null, '41', '0', 'Доп. контент', 'visitcard_contents', '34');
+INSERT INTO `z_rights_category` VALUES ('44', null, null, '41', '0', 'Изображения', 'visitcard_images', '35');
+
+CREATE TABLE `s_visitcards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `accountid` int(11) NOT NULL,
+  `pagetitle` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `logo` varchar(100) COLLATE utf8_bin DEFAULT '',
+  `phonenumbers` varchar(100) COLLATE utf8_bin DEFAULT '',
+  `maincontent` mediumtext COLLATE utf8_bin NOT NULL,
+  `footertext` text COLLATE utf8_bin,
+  `colortheme` varchar(20) COLLATE utf8_bin DEFAULT 'dark',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `t_visitcards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `visitcardid` int(11) NOT NULL,
+  `contentname` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `contenttext` mediumtext COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `typeOfDiscountService` tinyint(1) NULL DEFAULT 0;
+
+ALTER TABLE `t_order`
+ADD COLUMN `servicesum` int(11) NULL,
+ADD COLUMN `discountsum` int(11) NULL,
+ADD COLUMN `salesum` int(11) NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `infostring`  varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '';
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdservicepercent` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '';
+
+CREATE TABLE `u_timeTable` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`name` varchar(20) NOT NULL COMMENT 'Наименование графика',
+`timeStart` datetime NOT NULL,
+`timeEnd` datetime NOT NULL,
+`state` int(11) DEFAULT '0' COMMENT '0 Родителя нет. Период графика\r\n1 Время работы\r\n2 Свободное время\r\n3 Перерыв',
+`timeTable_id` int(11) DEFAULT '0' COMMENT 'Родитель',
+PRIMARY KEY (`id`)
+);
+
+
+
+ALTER TABLE `s_employee` ADD `grafic_id` int(11) DEFAULT '0';
+
+ALTER  TABLE `s_visitcards`
+ADD `name` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
+ADD `enable_im` tinyint(4) NOT NULL DEFAULT '0',
+ADD `im_menuid` int(11) NOT NULL DEFAULT '0';
+
+CREATE TABLE `s_combo_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `price` int(11) DEFAULT '0',
+  `mincount` int(11) DEFAULT '1',
+  `maxcount` int(11) DEFAULT '1',
+  `defaultitem` int(11) DEFAULT '0',
+  `itemid` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `s_combo_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `itemid` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT '0',
+  `idcombogroup` int(11) DEFAULT '0',
+  `printer` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `s_automated_point` ADD COLUMN `pwdCombo` VARCHAR (100) CHARACTER
+SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdservicepercent`;
+
+ALTER TABLE `s_automated_point` ADD COLUMN `pwdDiscount` VARCHAR (100) CHARACTER
+SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `pwdCombo`;
+
+ALTER TABLE `s_employee`
+ADD COLUMN `e_servicepercent`  int(11) NULL DEFAULT 0 AFTER `grafic_id`,
+ADD COLUMN `e_itempercent`  int(11) NULL DEFAULT 0 AFTER `e_servicepercent`,
+ADD COLUMN `e_itemservicepercent`  int(11) NULL DEFAULT 0 AFTER `e_itempercent`;
+
+ALTER TABLE `s_items`
+ADD COLUMN `i_printer`  int(11) NULL DEFAULT 0 AFTER `service`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `doNotUseMenuDesign`  tinyint(1) NULL DEFAULT 0 AFTER `pwdDiscount`;
+
+ALTER TABLE `s_items`
+ADD COLUMN `i_useInMenu`  tinyint(1) NULL DEFAULT 0 AFTER `i_printer`;
+
+INSERT INTO `z_rights_category` VALUES ('45', null, null, '0', '1', 'Таб - Задачи', 'tab_task', '36');
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `waiterCanTakePayment`  tinyint(1) NULL DEFAULT 0 AFTER `doNotUseMenuDesign`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `defaultFolderDuringAddClient` int(11) NULL DEFAULT 0;
+
+ALTER TABLE `z_logs`
+MODIFY COLUMN `type`  int(11) NULL DEFAULT 0;
+
+
+INSERT INTO `z_rights_category` VALUES ('46', null, null, '0', '0', 'Журнал действий', 'zlog', '37');  
+
+CREATE TABLE `t_discount_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `clientid` int(11) DEFAULT '0',
+  `discountid` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `z_logs`
+MODIFY COLUMN `desc`  text CHARACTER SET utf8 COLLATE utf8_bin NULL;
+
+CREATE TABLE `t_discount_ap` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `clientid` int(11) DEFAULT '0',
+  `apid` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `t_discount_ap`
+CHANGE COLUMN `clientid` `discountid`  int(11) NULL DEFAULT 0 AFTER `name`;
+
+
+ALTER TABLE `s_giftlevels`
+ADD COLUMN `ballcount` int(11) NULL DEFAULT 1 AFTER `price`;
+
+ALTER TABLE `s_giftlevels`
+ADD COLUMN `leveldiscountid`  int(11) NULL DEFAULT 0 AFTER `ballcount`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `divChangeWorkplace`  tinyint(1) NULL DEFAULT 0;
+
+ALTER TABLE `d_changes`
+MODIFY COLUMN `idautomated_point`  int(11) NOT NULL DEFAULT 0,
+ADD COLUMN `idworkplace`  int(11) NULL;
+
+ALTER TABLE `s_items`
+ADD COLUMN `mainShtrih`  varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL;
+
+INSERT INTO `z_rights_category` VALUES ('47', null, null, '0', '0', 'Таб-Рассылки', 'tab_delivery', '38');
+
+CREATE TABLE `z_user_right` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `table` varchar(250) COLLATE utf8_bin DEFAULT NULL,
+  `uid` int(11) DEFAULT NULL,
+  `view` tinyint(1) DEFAULT '0',
+  `edit` tinyint(1) DEFAULT '0',
+  `add` tinyint(1) DEFAULT '0',
+  `delete` tinyint(1) DEFAULT '0',
+  `print` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `z_user_right`
+ADD COLUMN `tid`  int(11) NULL AFTER `print`;
+
+
+CREATE TABLE `sms_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` mediumint(6) DEFAULT NULL,
+  `phone` varchar(70) COLLATE utf8_bin DEFAULT NULL,
+  `id_text_msg` int(11) DEFAULT NULL,
+  `status` varchar(40) COLLATE utf8_bin DEFAULT NULL COMMENT 'статус отправки сообщения',
+  `id_client` int(11) DEFAULT NULL,
+  `add_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `idout` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `idlink` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(60) COLLATE utf8_bin DEFAULT NULL,
+  `message_ID` int(11) DEFAULT NULL COMMENT 'ид собщения пришедший с сервера (для проверки статуса)',
+  PRIMARY KEY (`id`,`add_date`),
+  KEY `id` (`id`),
+  KEY `id_user` (`id_user`),
+  KEY `id_client` (`id_client`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `sms_mask` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `description` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT 'описание маски',
+  `idout` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `idlink` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `isgroup` tinyint(1) DEFAULT '0',
+  `parentid` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `sms_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_bin COMMENT 'текст сообщения',
+  `nameTemplate` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT 'название сообщения (создаёться при редакторе)',
+  `idout` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `idlink` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `sms_textMsg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text CHARACTER SET utf8 COMMENT 'текст сообщения',
+  `idout` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `idlink` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+
+INSERT INTO `s_config` VALUES ('4', null, null, '0', '0', 'Ключ API для СМС рассылки', 'sms_API', '');
+INSERT INTO `s_config` VALUES ('5', null, null, '0', '0', 'Email аккаунта для СМС рассылки', 'sms_email', '');
+INSERT INTO `s_config` VALUES ('6', null, null, '0', '0', 'Имя для отображения в рассылке', 'sms_name', '');
+
+INSERT INTO `z_rights_category` VALUES ('48', null, null, '0', '1', 'Таб - Задачи', 'tab_task', '36');
+INSERT INTO `z_rights_category` VALUES ('49', null, null, '0', '0', 'Журнал действий', 'zlog', '37');
+INSERT INTO `z_rights_category` VALUES ('50', null, null, '0', '0', 'Таб - СМС Логи', 'sms_logs', '39');
+INSERT INTO `z_rights_category` VALUES ('51', null, null, '0', '0', 'Таб - СМС_Редактор', 'sms_template', '40');
+INSERT INTO `z_rights_category` VALUES ('52', null, null, '0', '0', 'Таб - СМС_Маск', 'sms_mask', '41');
+INSERT INTO `z_rights_category` VALUES ('53', null, null, '47', '0', 'СМС текст сообщений', 'sms_textMsg', '42');
+INSERT INTO `z_rights_category` VALUES ('54', null, null, '0', '0', 'Таб - Рассылка', 'tab_delivery', '43');
+
+CREATE TABLE `s_exchange` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `values` text COLLATE utf8_bin,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `s_exchange`
+ADD COLUMN `date`  timestamp NULL DEFAULT CURRENT_TIMESTAMP AFTER `values`;
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `searchInMenu`  int(1) NULL DEFAULT 0 AFTER `divChangeWorkplace`,
+ADD COLUMN `materialsSumMoreServiceSum`  int(1) NULL DEFAULT 0 AFTER `searchInMenu`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `pwdDeleteFromOrder`  varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '' AFTER `divChangeWorkplace`,
+ADD COLUMN `blockZeroSale`  int(1) NULL DEFAULT 0 AFTER `pwdDeleteFromOrder`;
+
+
+
+CREATE TABLE `d_cancellation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Списание';
+
+CREATE TABLE `d_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Инвентаризация';
+
+CREATE TABLE `d_movement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `warehousetoid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Перемещение';
+
+CREATE TABLE `d_posting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Оприходование';
+
+CREATE TABLE `d_production` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL DEFAULT '0',
+  `warehouseid` int(11) NOT NULL DEFAULT '0',
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Выпуск продукции';
+
+CREATE TABLE `d_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `clientid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Поступление товаров';
+
+CREATE TABLE `d_selling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `clientid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `conducted` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Реализация товаров';
+
+CREATE TABLE `r_remainder` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documenttype` int(11) NOT NULL,
+  `documentid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `clientid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `costsum` float(15,5) NOT NULL DEFAULT '0.00000',
+  `salesum` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Регистр накоплений';
+
+CREATE TABLE `s_calculations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `itemid` int(11) NOT NULL DEFAULT '0',
+  `composition` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `dt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `s_multipliers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `frommeasureid` int(11) NOT NULL,
+  `tomeasureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Коэффициенты';
+
+CREATE TABLE `t_calculations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `calculationid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL DEFAULT '0',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_cancellation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `price` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `plannedquantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `price` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_movement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_posting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `price` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_production` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `documentid` int(11) NOT NULL DEFAULT '0',
+  `itemid` int(11) NOT NULL DEFAULT '0',
+  `plannedquantity` float(15,3) NOT NULL DEFAULT '0.000',
+  `quantity` float(15,3) NOT NULL DEFAULT '0.000',
+  `measureid` int(11) NOT NULL DEFAULT '0',
+  `multip` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Выпуск продукции: Товары';
+
+CREATE TABLE `t_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `price` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_selling` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` int(11) DEFAULT NULL,
+  `idlink` int(11) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `price` float(15,3) NOT NULL DEFAULT '0.000',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `useBuyerDisplay`  int(1) NULL DEFAULT 0 AFTER `materialsSumMoreServiceSum`;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `expiration_date`  datetime NULL;
+
+ALTER TABLE `t_employee_workplace`
+ADD COLUMN `expiration_date`  datetime NULL;
+
+
+
+ALTER TABLE `t_employee_workplace`
+DROP COLUMN `expiration_date`;
+
+
+ALTER TABLE `t_workplace`
+ADD COLUMN `expiration_date`  datetime NULL;
+
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `status`  int(11) NULL DEFAULT 0;
+
+ALTER TABLE `t_workplace`
+ADD COLUMN `status`  int(11) NULL DEFAULT 0;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `nameForPrint`  varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT '';
+
+
+
+ALTER TABLE `s_employee`
+ADD COLUMN `helps`  tinyint(1) NULL,
+ADD COLUMN `phone`  varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NULL,
+ADD COLUMN `email`  varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL;
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `jTimeStart`  datetime NULL,
+ADD COLUMN `jTimeEnd`  datetime NULL;
+
+CREATE TABLE `s_journal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dtstart` datetime DEFAULT NULL,
+  `dtend` datetime DEFAULT NULL,
+  `authorid` int(11) DEFAULT NULL,
+  `clientid` int(11) NOT NULL,
+  `employeeid` int(11) DEFAULT NULL,
+  `note` varchar(500) COLLATE utf8_bin DEFAULT '',
+  `dt_j` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `idap` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `s_giftlevels` DROP INDEX `levelnum` , ADD UNIQUE INDEX `levelnum` (`levelnum`, `leveldiscountid`) USING BTREE ;
+
+ALTER TABLE `s_giftlevels` DROP INDEX `levelnum`;
+
+ALTER TABLE `s_giftlevels` ADD UNIQUE INDEX `levelnum` (`levelnum`, `leveldiscountid`) USING BTREE ;
+
+CREATE TABLE `s_transaction` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `amount` float(15,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `s_specifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT NULL,
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `itemid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `s_shtrih` 
+  ADD `specificationid` int(11) NOT NULL DEFAULT '0',
+  ADD `measureid` int(11) NOT NULL;
+
+ALTER TABLE r_remainder ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE t_order ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE t_receipt ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_selling ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_posting ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_cancellation ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_inventory ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_movement ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_production ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE `s_shtrih` 
+  ADD `specificationid` int(11) NOT NULL DEFAULT '0',
+  ADD `measureid` int(11) NOT NULL;
+
+ALTER TABLE r_remainder ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE t_order ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE t_receipt ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_selling ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_posting ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_cancellation ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_inventory ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_movement ADD specificationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE t_production ADD specificationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE d_receipt ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_selling ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_posting ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_cancellation ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_inventory ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_movement ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE d_production ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE r_remainder ADD organizationid INT(11) NOT NULL DEFAULT 0;
+ALTER TABLE s_clients ADD organizationid INT(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE `t_employee_workplace`
+DROP COLUMN `expiration_date`;
+
+
+ALTER TABLE `d_cancellation`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_inventory`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_movement`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_posting`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_production`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_receipt`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_selling`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+
+ALTER TABLE `d_cancellation`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_inventory`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_movement`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_posting`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_production`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_receipt`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_cancellation`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_inventory`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `d_selling`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_movement`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_posting`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_production`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_receipt`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+ALTER TABLE `t_selling`
+MODIFY COLUMN `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+MODIFY COLUMN `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL;
+
+
+RENAME TABLE s_organisations TO s_organizations;
+
+ALTER TABLE t_calculations MODIFY quantity float(15,3);
+
+ALTER TABLE s_subdivision ADD `warehouseid` int(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE d_order ADD `conducted` int(11) NOT NULL DEFAULT '0';
+
+ALTER TABLE s_automated_point ADD `warehouseid` int(11) NOT NULL DEFAULT '0';
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `rememberAboutDiscount`  tinyint(1) NULL DEFAULT 0 AFTER `warehouseid`;
+
+INSERT INTO `z_rights_category` VALUES ('58', null, null, '0', '1', 'Таб - Склад', 'tab_warehouse', '50');
+INSERT INTO `z_rights_category` VALUES ('59', null, null, '58', '0', 'Склады', 's_warehouse', '51');
+INSERT INTO `z_rights_category` VALUES ('60', null, null, '58', '0', 'Коэффициенты', 's_multipliers', '52');
+INSERT INTO `z_rights_category` VALUES ('61', null, null, '58', '0', 'Калькуляции', 's_calculations', '53');
+INSERT INTO `z_rights_category` VALUES ('62', null, null, '58', '0', 'Типа отчет', 'gethtml_tipaotchet', '54');
+INSERT INTO `z_rights_category` VALUES ('63', null, null, '58', '0', 'Поступление товаров', 'd_receipt', '55');
+INSERT INTO `z_rights_category` VALUES ('64', null, null, '58', '0', 'Реализация товаров', 'd_selling', '56');
+INSERT INTO `z_rights_category` VALUES ('65', null, null, '58', '0', 'Инвентаризация', 'd_inventory', '57');
+INSERT INTO `z_rights_category` VALUES ('66', null, null, '58', '0', 'Перемещение', 'd_movement', '58');
+INSERT INTO `z_rights_category` VALUES ('67', null, null, '58', '0', 'Оприходование', 'd_posting', '59');
+INSERT INTO `z_rights_category` VALUES ('68', null, null, '58', '0', 'Списание', 'd_cancellation', '60');
+INSERT INTO `z_rights_category` VALUES ('69', null, null, '58', '0', 'Выпуск готовой продукции', 'd_production', '61');
+INSERT INTO `z_rights_category` VALUES ('70', null, null, '58', '0', 'Материальная ведомость', 'gethtml_remains', '62');
+INSERT INTO `z_rights_category` VALUES ('71', null, null, '58', '0', 'Провести счета', 'gethtml_conductor', '63');
+
+CREATE TABLE `t_object_tarif` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `idobject` int(11) DEFAULT NULL,
+  `tarifid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `s_tarifs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dtstart` datetime DEFAULT NULL,
+  `itemid` int(11) DEFAULT '0',
+  `interval_default` int(11) DEFAULT '0',
+  `price_default` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `t_tarifs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `mon` tinyint(1) DEFAULT '0',
+  `tue` tinyint(1) DEFAULT '0',
+  `wed` tinyint(1) DEFAULT '0',
+  `thu` tinyint(1) DEFAULT '0',
+  `fri` tinyint(1) DEFAULT '0',
+  `sat` tinyint(1) DEFAULT '0',
+  `sun` tinyint(1) DEFAULT '0',
+  `timeStart_tar` datetime DEFAULT NULL,
+  `timeEnd_tar` datetime DEFAULT NULL,
+  `interval` int(11) DEFAULT '0',
+  `price` int(11) DEFAULT '0',
+  `tarifid` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+ALTER TABLE `s_journal`
+ADD COLUMN `orderid`  int(11) NULL;
+
+ALTER TABLE `s_journal`
+ADD COLUMN `objectid`  int(11) NULL;
+
+/*26.11.2013 10:55:29*/
+INSERT INTO `z_rights_category` VALUES ('72', null, null, '4', '0', 'Тарифы', 's_tarifs', '18');
+
+/*26.11.2013 11:17:35*/
+ALTER TABLE `s_specificationoptions` CHANGE `kindid` `kindofspecificationid` int(11);
+
+/*27.11.2013 05:24:25*/
+ALTER TABLE `s_calculations`
+ADD `quantity` float(15, 3) NOT NULL DEFAULT 1.000,
+ADD `measureid` int(11) NOT NULL DEFAULT 0;
+
+ALTER TABLE `t_production`
+MODIFY `multip` float(15, 3) NOT NULL DEFAULT 1.000;
+
+
+ALTER TABLE `s_automated_point`
+ADD COLUMN `switchOffCompAfterClose`  tinyint(1) NULL DEFAULT 0,
+ADD COLUMN `alwaysUseNote`  tinyint(1) NULL;
+
+/*27.11.2013 05:44:27*/
+ALTER TABLE `t_production`
+DROP `plannedquantity`;
+
+/*28.11.2013 12:33:07*/
+ALTER TABLE `s_items`
+ADD `loss_cold` float(15,3) NOT NULL DEFAULT 0.00,
+ADD `loss_hot` float(15,3) NOT NULL DEFAULT 0.00;
+
+ALTER TABLE `t_calculations`
+ADD `loss_cold` float(15,3) NOT NULL DEFAULT 0.00,
+ADD `loss_hot` float(15,3) NOT NULL DEFAULT 0.00;
+
+/*03.12.2013 05:54:25*/
+UPDATE z_rights_category SET rightname='s_organizations' WHERE id=6;
+
+/*03.12.2013 09:13:31*/
+INSERT INTO `z_rights_category` VALUES ('73', null, null, '4', '0', 'Комбо меню', 'get_window_combo', '14');
+
+/*05.12.2013 14:02:22*/
+ALTER TABLE `r_remainder`
+ADD COLUMN `parentid`  int(11) NOT NULL DEFAULT 0;
+
+/*06.12.2013 06:36:35*/
+INSERT INTO `z_rights_category` VALUES ('74', null, null, '2', '0', 'Оплата услуг ', 'account_payment', '26');
+
+/*06.12.2013 07:20:42*/
+ALTER TABLE `s_automated_point`
+ADD COLUMN `useFR`  tinyint(1) NULL DEFAULT 0 AFTER `alwaysUseNote`;
+
+/*09.12.2013 11:44:44*/
+ALTER TABLE `s_items`
+MODIFY `measurement` int(11) NOT NULL DEFAULT 1;
+
+/*09.12.2013 12:01:26*/
+CREATE TABLE `d_request` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `employeeid` int(11) NOT NULL,
+  `warehouseid` int(11) NOT NULL,
+  `clientid` int(11) NOT NULL,
+  `note` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `organizationid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Заявка на склад';
+
+CREATE TABLE `t_request` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idout` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  `dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `documentid` int(11) NOT NULL,
+  `itemid` int(11) NOT NULL,
+  `quantity` float(15,5) NOT NULL DEFAULT '1.00000',
+  `measureid` int(11) NOT NULL,
+  `multip` float(15,3) NOT NULL DEFAULT '1.000',
+  `specificationid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+/*10.12.2013 11:02:57*/
+ALTER TABLE `s_items`
+MODIFY `i_useInMenu` tinyint(1) NOT NULL DEFAULT 1;
+
+/*10.12.2013 11:17:34*/
+ALTER TABLE `t_order`
+MODIFY `coocked` tinyint(1) NOT NULL DEFAULT 0;
+
+/*10.12.2013 11:19:42*/
+ALTER TABLE `t_order`
+ADD COLUMN `coocked` tinyint(1) NOT NULL DEFAULT '0';
+
+/*10.12.2013 15:02:40*/
+INSERT INTO `z_rights_category` VALUES ('75', null, null, '50', '0', 'Заявка на склад', 'd_request', '63');
+
+/*10.12.2013 15:42:30*/
+UPDATE z_rights_category SET parentid=58 WHERE id=75;
+
+/*10.12.2013 15:45:46*/
+ALTER TABLE `s_items`
+MODIFY `i_useInMenu` tinyint(1) NOT NULL DEFAULT 0;
+
+/*10.12.2013 15:49:28*/
+UPDATE z_rights_category SET name='Отчет по калькуляции блюд' WHERE id=62;
+
+/*10.12.2013 16:12:38*/
+CREATE TABLE `urv_graphic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text,
+  `for` tinyint(1) DEFAULT NULL,
+  `point` date DEFAULT NULL,
+  `type` tinyint(1) DEFAULT '1',
+  `idout` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `idlink` varchar(50) DEFAULT NULL,
+  `parentid` int(11) DEFAULT '0',
+  `isgroup` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+

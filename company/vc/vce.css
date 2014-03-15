@@ -1,0 +1,93 @@
+.vce{
+    margin-top: .5em;
+}
+.vce div{
+    clear: both;
+    position: relative;
+    display: block;
+    margin: 0 0 .6em 0;
+}
+.padDiv{ padding-left: 1em; }
+.ckeDiv{ padding: .5em 0; }
+.vce input[type="text"]{
+    margin: 0;
+    width: 300px;
+}
+.vce input[type="checkbox"]{
+    margin: .2em .5em 1em 0;
+    float: left;
+}
+.vce select{
+    margin: 0;
+    width: 304px;
+}
+.vce label{
+    float: left;
+    display: block;
+    width: 180px;
+    padding: .1em 0;
+}
+.footertext{
+    width: 400px;
+    height: 48px;
+}
+.vcebutton{
+    display: inline-block;
+    background-color: #0A5BC4;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    font-weight: 700; 
+    opacity: 0.8;
+    margin: 0 1em .5em 0;
+    padding: .5em 1.2em .5em ;
+    
+    transition: 0.2s all ease;
+    -moz-transition: 0.2s all ease; 
+    -webkit-transition: 0.2s all ease; 
+    -o-transition: 0.2s all ease; 
+    -ms-transition: 0.2s all ease;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: moz-none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+.vcebutton.logobtn{ display: block; width: 190px; margin: 0 1em .5em 0; }
+.vcebutton.red{ background-color: #E32818; }
+.vcebutton.green{ background-color: #08C308; }
+.vcebutton:hover{
+    transition: 0.2s all ease;
+    opacity: 1;
+}
+.logo{
+    width: 180px;
+    max-height: 100px;
+    display: inline-block;
+    margin: 0 1em .5em 0;
+    float: left;
+}
+.imagesList img{
+    height: 100px;
+    outline: 0;
+    display: inline-block;
+    margin: 0 1em 1em 0;
+}
+.imagesList img.selectedImage{
+    outline: 3px solid #a3a3a3;
+}
+.logoBtns{
+    display: table-cell!important;
+    margin-top: 0!important;
+}
+.uploadDiv{
+    position: relative;
+    display: block;
+    margin-top: 0!important;
+}
+.uploadDiv:hover .vcebutton{
+    transition: background-color 0.4s;
+    opacity: 1;    
+}
+#contentList{ display: inline-block; margin-left: 1em; }
